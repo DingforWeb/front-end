@@ -5,6 +5,12 @@
 <title>index</title>
 <link href="css/main.css" type="text/css" rel="stylesheet">
 <script src="js/setHomeSetFav.js" type="text/javascript" charset="gb2312"></script>
+<script src="js/myfocus-2.0.1.min.js" type="text/javascript"></script>
+<script src="js/mf-pattern/mF_dleung.js" type="text/javascript"></script>
+<link href="js/mf-pattern/mF_dleung.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript">
+myFocus.set({id:'picID'});//焦点图初始值id与最外层div id一致
+</script>
 </head>
 
 <body>
@@ -47,7 +53,39 @@
     <!--nav_mid结束-->
     <div class="nav_right"></div>
   </div>
-  <!--nav结束--> 
+  <!--nav结束-->
+  <div class="ad" id="picID">
+  <div class="loading">
+  <img src="images/loading.gif" alt="图片加载中" />
+  </div>
+    <div class="pic">
+      <ul>
+        <li><img src="images/ad2.jpg" /></li>
+        <li><img src="images/ad3.jpg" /></li>
+        <li><img src="images/ad4.jpg" /></li>
+      </ul>
+    </div><!--图片列表必须在pic的div里-->
+  </div><!--ad结束-->
+  
+  <div class="main">
+  <div class="news">
+  <div class="title">
+  <h2 class="title_left">新闻中心</h2><span class="title_right"><a href="news.html">More&gt;&gt;</a></span>
+  </div><!--title结束-->
+  <div class="pic_news">
+  <img src="images/news.jpg" /><a href="#"><h2>my life</a></h2><p>我可以划船不用浆<br />我可以杨帆没有风向<br /> 因为我这一生<br /> 全靠浪</p>
+  </div><!--pic_news结束-->
+  <div class="news_list">
+  <ul>
+  <li><a href="">【Java Web 开发实例大全】</a><span>600个典型实例</span></li>
+  <li><a href="">【JavaScript DOM 编程艺术】</a><span>Web Design</span></li>
+  <li><a href="">【JavaScript 语言精粹】</a><span>精华糟粕</span></li>
+  </ul>
+  </div><!--nes_list结束-->
+  </div><!--news结束-->
+  <div class="course"></div><!--course结束-->
+  <div class="sidebar"></div><!--sidebar结束-->
+  </div>
 </div>
 <!--wrap结束-->
 </body>
