@@ -13,8 +13,14 @@ body{
 	background-color: #FFFFFF;
 }
 .top_up{
-	background-color: #BFC1CD;
+	background-color: #E8E8E8;
 	height: 25px;
+}
+
+.top_up span{
+	float:left;
+	margin-left: 12%;
+	color: #293543;
 }
 
 .top_content{
@@ -27,10 +33,16 @@ body{
 
 .top_left{
 	float: left;
+	width: 400px;
 }
 
 .top_left img{
 	margin-top:12px;
+}
+
+.top_middle{
+	float: left;
+	
 }
 
 .top_right li{
@@ -44,7 +56,7 @@ body{
 }
 
 .search_text{
-	width: 190px;
+	width: 150px;
 	height: 25px;
 	background: url(../img/search.jpg) no-repeat left center;
 	background-color: #fff;
@@ -54,10 +66,11 @@ body{
 .search_btn{
 	width: 50px;
 	height: 25px;
-	background-color: darkred ;
+	background-color: #D90000;
 	color: white;
 	font-size: 14px;
 	font-family: "微软雅黑";
+	font-weight: bold;
 	margin:0 5px;
 	border:0;
 	
@@ -72,7 +85,7 @@ body{
 	color: deepskyblue;
 	font-size: 16px;
 	font-family: "微软雅黑";
-	margin-right: 50px;
+	margin-right: 10px;
 	font-weight: bold;
 }
 
@@ -94,6 +107,7 @@ body{
 .wrap{
 	width: 1024px;
 	margin: 0 auto;
+	clear: both;
 }
 
 
@@ -188,6 +202,37 @@ body{
 
 #nav5>a{
 	background: url(../img/management.png) no-repeat left center;
+}
+
+.nav_right{
+	width: 854px;
+	height: 50px;
+	background-color: #F1F2F7;
+	
+}
+
+.nav_right_content{
+	width: 90%;
+	margin: 0 auto;
+}
+
+.nav_right_content li{
+	line-height: 50px;
+	width: 125px;
+	list-style-type: none;
+	float: left;
+	background: url(../img/line.png) no-repeat right center;
+	text-align: center;
+}
+
+.nav_right_content li a{
+	text-decoration: none;
+	color: #999999;
+	font-size: 16px;
+}
+
+.nav_right_content li a:hover{
+	color: red;
 }
 
 .copyright{
