@@ -17,12 +17,6 @@ body{
 	height: 25px;
 }
 
-.top_up span{
-	float:left;
-	margin-left: 12%;
-	color: #293543;
-}
-
 .top_content{
 	width:1000px;
 	margin: 0 auto;
@@ -33,22 +27,22 @@ body{
 
 .top_left{
 	float: left;
-	width: 400px;
-}
-
-.top_left img{
-	margin-top:12px;
-}
-
-.top_middle{
-	float: left;
 	
+}
+
+.top_right{
+	float: right;
+	line-height: 50px;	
 }
 
 .top_right li{
 	list-style-type: none;
 	float:right;
 	line-height: 50px;
+}
+
+.top_right li a img{
+	margin-top: 5px;
 }
 
 .top_right li img{
@@ -75,27 +69,18 @@ body{
 	border:0;
 	
 }
-.top_right{
-	float: right;
-	line-height: 50px;	
-}
 
-.top_right li a:link,.top_right a:visited{
+#login a{
 	text-decoration: none;
 	color: deepskyblue;
 	font-size: 16px;
 	font-family: "微软雅黑";
-	margin-right: 10px;
+	margin-left: 10px;
 	font-weight: bold;
 }
 
-.top_right a:hover,.top_right a:active{
-	text-decoration: none;
-	color: darkred;
-	font-size: 16px;
-	font-family: "微软雅黑";
-	margin-right: 50px;
-	font-weight: bold;
+#login a:hover,#login a:active{
+	color: red;
 }
 
 .top_bottom{
@@ -205,7 +190,6 @@ body{
 }
 
 .nav_right{
-	width: 854px;
 	height: 50px;
 	background-color: #F1F2F7;
 	
@@ -218,7 +202,7 @@ body{
 
 .nav_right_content li{
 	line-height: 50px;
-	width: 125px;
+	width: 160px;
 	list-style-type: none;
 	float: left;
 	background: url(../img/line.png) no-repeat right center;
@@ -233,6 +217,12 @@ body{
 
 .nav_right_content li a:hover{
 	color: red;
+}
+
+.main{
+	margin-top: 10px;
+	height: 500px;
+	background-color: #F1F2F7;
 }
 
 .copyright{

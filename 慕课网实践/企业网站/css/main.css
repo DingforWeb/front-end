@@ -320,6 +320,9 @@ body{
 	width: 770px;
 	border: 1px solid #E8E8E8;
 	float: right;
+	min-height: 350px;
+	_height: 350px;
+	background-color: white;
 }
 
 .news_type h2{
@@ -388,4 +391,24 @@ body{
 
 .page a:hover,.page:a:active{
 	color: #000000;
+}
+
+.list_box h1{
+	font-family: "微软雅黑";
+	font-size: 20px;
+	text-align: center;
+	margin: 0 10;
+}
+
+.list_box_newsinfo{
+	color: #666666;
+	text-align: center;
+	border: 1px dotted #666666;
+}
+
+.list_box_newsContent{
+	font-size: 14px;
+	padding: 20px;
+	line-height: 20px;
+	text-indent: 2em;
 }
