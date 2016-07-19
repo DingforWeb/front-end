@@ -10,18 +10,14 @@ body{
 
 .top{
 	width: 100%;
-	background-color: #FFFFFF;
-}
-.top_up{
 	background-color: #E8E8E8;
-	height: 25px;
 }
+
 
 .top_content{
 	width:1000px;
 	margin: 0 auto;
 	height:50px;
-	background-color: #fff;
 	
 }
 
@@ -42,31 +38,32 @@ body{
 }
 
 .top_right li a img{
-	margin-top: 5px;
+	margin-top: 7px;
 }
 
 .top_right li img{
 	margin: 0 25px;
 }
-
+form{
+	float: left;
+	margin-top: 12px;
+}
 .search_text{
-	width: 150px;
+	border: 0;
+	width: 170px;
 	height: 25px;
-	background: url(../img/search.jpg) no-repeat left center;
-	background-color: #fff;
-	padding-left:25px;
+	border: 1px #BFC1CD solid;
+	float: left;
+	line-height: 40px;
 }
 
 .search_btn{
-	width: 50px;
-	height: 25px;
-	background-color: #D90000;
-	color: white;
-	font-size: 14px;
-	font-family: "微软雅黑";
-	font-weight: bold;
-	margin:0 5px;
+	background: url(../img/search.png) no-repeat center;
 	border:0;
+	width: 25px;
+	height: 25px;
+	float: left;
+	margin-left: 10px;
 	
 }
 
@@ -83,14 +80,9 @@ body{
 	color: red;
 }
 
-.top_bottom{
-	width: 1024px;
-	height: 10px;
-	background-color: #E8E8E8;
-	margin: 0 auto;
-}
+
 .wrap{
-	width: 1024px;
+	width: 100%;
 	margin: 0 auto;
 	clear: both;
 }
