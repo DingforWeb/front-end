@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>客户信息</title>
+		<title>服务管理</title>
 		<link rel="stylesheet" href="css/main.css" /> 
 	</head>
 	<body>
@@ -27,10 +27,10 @@
 		<div class="wrap">
 			<div class="nav">
 				<ul >
-					<li id="nav1"><a href="#" >客户</a>
+					<li id="nav1"><a href="customer.html" >客户</a>
 						<ul>
 							<li><a href="#">客户信息</a></li>
-							<li><a href="customerlost.html">客户流失</a></li>
+							<li><a href="#">客户流失</a></li>
 						</ul>
 					</li>
 					<li id="nav2"><a href="#">业务机会</a>
@@ -39,7 +39,7 @@
 							<li><a href="#">开发计划</a></li>
 						</ul>
 					</li>
-					<li id="nav3"><a href="service.html">服务</a></li>
+					<li id="nav3"><a href="#">服务</a></li>
 					<li id="nav4"><a href="#">统计报表</a>
 						<ul>
 							<li><a href="#">客户贡献</a></li>
@@ -58,19 +58,30 @@
 			</div><!--nav结束-->			
 			<div class="nav_right">
 				<div class="nav_right_content">
-					<span><p>客户信息</p></span>
+					<span><p>服务管理</p></span>
+					<a href="serviceadd.html"><button class="btn" >新建</button></a>
 				</div>
 			</div><!--nav_right结束-->
 			<div class="main">
 				<div class="search_box">
 					<form id="search">
 						<fieldset>
-							<legend>客户信息查询</legend>
-							<span>客户编号：</span><br />
+							<legend>服务查询</legend>
+							<span>客户：</span><br />
 							<input type="text" value="" /><br />
-							<span>客户名称：</span><br />
-							<input type="text" value="" /><br /><br />
-							<input type="submit" value="查询"/><br />
+							<span>概要：</span><br />
+							<input type="text" value="" /><br />
+							<span>服务类型：</span>
+							<select>
+								<option>全部</option>
+							</select><br />
+							<span>创建日期：</span><br />
+							<input type="text" value="" style="width: 50px;" />-<input type="text" value=""  style="width: 50px;" /><br />
+							<span>状态：</span>
+							<select>
+								<option>全部</option>
+							</select><br /><br  />
+							<input class="btn" value="查询" type="submit"/>
 						</fieldset>
 					</form>
 				</div>
