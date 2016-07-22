@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>服务管理</title>
+		<title>新建交往记录</title>
 		<link rel="stylesheet" href="css/main.css" /> 
 	</head>
 	<body>
@@ -12,7 +12,7 @@
 				<div class="top_right">
 					<ul>
 						<li id="login"><a href="#">登录</a></li>
-						<li><a href="index.html"><img src="img/home.png"</a></li>
+						<li><a href="index.html"><img src="img/home.png"/></a></li>
 						<li>
 							<form method="" >
 							<input class="search_text" type="text" class="search_text"/>
@@ -58,40 +58,22 @@
 			</div><!--nav结束-->			
 			<div class="nav_right">
 				<div class="nav_right_content">
-					<span><p>服务管理</p></span>
-					<a href="serviceadd.html"><button class="btn" >新建</button></a>
+					<span><p>新建交往记录</p></span>
+					<button class="btn" src="#">新建</button>
 				</div>
 			</div><!--nav_right结束-->
 			<div class="main">
-				<div class="search_box">
-					<form id="search">
-							<span>客户：</span>
-							<input type="text" value="" />
-							<span>概要：</span>
-							<input type="text" value="" />
-							<span>服务类型：</span>
-							<select>
-								<option>全部</option>
-							</select>
-							<span>创建日期：</span>
-							<input type="text" value="" style="width: 50px;" />-<input type="text" value=""  style="width: 50px;" />
-							<span>状态：</span>
-							<select>
-								<option>全部</option>
-							</select>
-							<input class="btn" value="查询" type="submit"/>
+				<div class="main_content">
+					<form action="addconnect!addConnect.action" method="post">
+						<span>时间：</span><input type="text" name="connect_time" /><p class="red">*</p><br />
+						<span>地点：</span><input type="text" name="place"> <p class="red">*</p><br />
+						<span>概要：</span><input type="text"  style="width: 300px;" name="connect_outline"><p class="red">*</p><br />
+						<span>备注：</span><input type="text" name="connect_remark" /><br />
+						<span>详细信息： </span><input type="text" name="detail" style="width: 300px;" /> <br />
+						<input class="btn" type="submit" value="保存">
+						<button type="" src="" value="" class="btn">返回</button>
 					</form>
-				</div>
-				<div class="search_info">
-					<table>
-						<tr>
-							<th ></th><th>编号</th><th>客户</th><th>概要</th><th>服务类型</th><th>创建人</th><th>创建日期</th><th>分配给</th><th>操作</th>
-						</tr>
-						<tr>
-							<td></td><td>1</td><td>10086</td><td>询问牛肉干优惠</td><td>咨询</td><td>小郁</td><td>2016/1/2</td><td>小林</td><td><a>处理</a><a>反馈</a><a>分档</a></td>
-						</tr>
-					</table>
-				</div>
+				</div >
 			</div><!--main结束-->
 		</div><!--wrap结束-->
 		<div class="copyright">

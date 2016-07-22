@@ -1,7 +1,9 @@
 ﻿*{
 	margin: 0;
 	padding: 0;
-	font-size:14px ;
+}
+a{
+	text-decoration:none;
 }
 
 body{
@@ -16,7 +18,6 @@ body{
 .top_content{
 	width:90%;
 	margin: 0 auto;
-	height:60px;
 	background-color: #fff;
 	
 }
@@ -27,8 +28,8 @@ body{
 	
 }
 
-.top_right{
-	width:50%;
+.top_right{ 
+	width: 50%;
 	float: right;
 }
 .top_right li{
@@ -36,45 +37,38 @@ body{
 	float:right;
 }
 
-.top_right li  a {
-	width:35px;
-}
-
 .top_right li  a img{
-	margin:15px 10px;
+	margin:13px 10px;
 	border:0;
 }
 
 .top_right form{
-	clear:left;
-	margin-top:17px;
+	margin-top:13px;
 
 }
 .search_text{
 	width: 170px;
 	height: 25px;
 	border:1px solid #8E8E8E;
-	float:left;
 }
 
 .search_btn{
 	width:25px;
 	height:25px;
 	background:url(../img/search.png) no-repeat center;
-	float:left;
 	border:0;
 	margin-left:10px;
 }
 
 #login a{
-	width:35px;
 	line-height:60px;
 	text-decoration: none;
 	color: deepskyblue;
-	font-size: 16px;
+	font-size: 18px;
 	font-family: "微软雅黑";
 	margin-left: 10px;
 	font-weight: bold;
+	letter-spacing:0.3em;
 }
 
 #login a:hover,#login a:active{
@@ -187,8 +181,10 @@ body{
 	width:85%;
 	float:right;
 	clear:right;
+	border-bottom:2px #E8E8E8 solid;
 	
 }
+
 
 .nav_right_content span p{
 	display:inline;
@@ -206,73 +202,78 @@ body{
 
 .main{
     width:85%;
-	margin-top: 10px;
-	height: 585px;
+	height: 580px;
 	background-color: #F1F2F7;
 	float:right;
 }
 
 .search_box{
-	margin-top:100px;
-	margin-left: auto;
-	margin-right: auto;
-	width:400px;
+	margin:0 auto;
+	background-color: skyblue;
+	height:auto;
+	padding:10px 0;
+}
+
+.red{
+	color:red;
+	display:inline;
 }
 
 #search{
-	margin:0 auto;
+	margin: auto;
 	
 }
 
-#search legend{
-	font-size:16px;
-	font-weight:bold;
+#search span{
+	margin-left:15px;
 }
 
-
 #search input[type="text"]{
-	height: 30px;
-	width: 300px;
+	height: 25px;
+	width: 150px;
 	background-color:#fff;
 	border:0;
-	margin:0 10px;
-	vertical-align: middle;
-	line-height:30px;
+	line-height:25px;
 }
 
 #search input[type="submit"]{
-	height: 30px;
-	width: 60px;
+	height: 25px;
+	width: 45px;
 	background-color:deepskyblue;
 	color:#fff;
 	font-weight:bold;
 	border:0;
-	float:right;
-	margin-right:20px;
+	margin:0 15px;
 }
 
 #search input[type="submit"]:hover{
 	background-color:red;
 }
 
-.text{
-	height: 30px;
-	width: 180px;
-	background-color:#fff;
-	border:0;
-	margin:0 10px;
-	vertical-align: middle;
-	line-height:30px;
-}
+
 
 .main_content{
 	width:85%;
 	margin:0 auto;
 	margin-top:20px;
 }
-span{
-	magin:15px;
-	line-height:40px;
+
+.main_content form{
+	margin-left:50px;
+}
+.main_content span{
+	font-size:14px;
+	width: 100px;
+	display:inline-block;
+
+}
+.main_content input[type="text"]{
+	height: 35px;
+	width: 180px;
+	background-color:#fff;
+	border:0;
+	line-height:35px;
+	margin:7px 5px;
 }
 
 .btn{
@@ -282,10 +283,17 @@ span{
 	color:#fff;
 	font-weight:bold;
 	border:0;
+	margin:10px;
 }
 
 .btn:hover{
 	background-color:red;
+}
+
+.search_info{
+	margin:10px auto;
+	width: 85%;
+	background-color:#fff;
 }
 
 .copyright{
@@ -303,6 +311,7 @@ span{
 }
 
 .copyright_content li{
+	font-size: 14px;
 	list-style-type: none;
 	float: left;
 	width:300px;

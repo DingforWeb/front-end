@@ -1,9 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>服务管理</title>
+		<title>数据字典管理</title>
 		<link rel="stylesheet" href="css/main.css" /> 
+		<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+		<script type="text/javascript" src="js/myNavigation.js"></script>
 	</head>
 	<body>
 		<div class="top">
@@ -16,7 +18,8 @@
 						<li>
 							<form method="" >
 							<input class="search_text" type="text" class="search_text"/>
-							<input class="search_btn" type="submit" name="" id="" value="" /></form>
+							<input class="search_btn" type="submit" name="" id="" value="" />
+							</form>
 						</li>
 						
 						
@@ -27,13 +30,13 @@
 		<div class="wrap">
 			<div class="nav">
 				<ul >
-					<li id="nav1"><a href="index.html" >客户</a>
+					<li id="nav1"><a href="#" >客户</a>
 						<ul>
-							<li><a href="index.html">客户信息</a></li>
+							<li><a href="#">客户信息</a></li>
 							<li><a href="customerlost.html">客户流失</a></li>
 						</ul>
 					</li>
-					<li id="nav2"><a href="salechance.html">业务机会</a>
+					<li id="nav2"><a href="#">业务机会</a>
 						<ul>
 							<li><a href="salechance.html">销售机会</a></li>
 							<li><a href="#">开发计划</a></li>
@@ -58,40 +61,30 @@
 			</div><!--nav结束-->			
 			<div class="nav_right">
 				<div class="nav_right_content">
-					<span><p>服务管理</p></span>
+					<span><p>数据字典管理</p></span>
 					<a href="serviceadd.html"><button class="btn" >新建</button></a>
 				</div>
 			</div><!--nav_right结束-->
 			<div class="main">
 				<div class="search_box">
 					<form id="search">
-							<span>客户：</span>
-							<input type="text" value="" />
-							<span>概要：</span>
-							<input type="text" value="" />
-							<span>服务类型：</span>
-							<select>
-								<option>全部</option>
-							</select>
-							<span>创建日期：</span>
-							<input type="text" value="" style="width: 50px;" />-<input type="text" value=""  style="width: 50px;" />
-							<span>状态：</span>
-							<select>
-								<option>全部</option>
-							</select>
-							<input class="btn" value="查询" type="submit"/>
+						<span>类别：</span>
+						<input type="text" value="" />
+						<span>条目：</span>
+						<input type="text" value="" />
+						<span>值：</span>
+						<input type="text" value="" />
+						<input type="submit" value="查询"/>
 					</form>
 				</div>
 				<div class="search_info">
 					<table>
 						<tr>
-							<th ></th><th>编号</th><th>客户</th><th>概要</th><th>服务类型</th><th>创建人</th><th>创建日期</th><th>分配给</th><th>操作</th>
-						</tr>
-						<tr>
-							<td></td><td>1</td><td>10086</td><td>询问牛肉干优惠</td><td>咨询</td><td>小郁</td><td>2016/1/2</td><td>小林</td><td><a>处理</a><a>反馈</a><a>分档</a></td>
+							<th>编号</th><th>类别</th><th>条目</th><th>值</th><th>能否编辑</th><th>操作</th>
+							
 						</tr>
 					</table>
-				</div>
+				</div><!-- search_info结束-->
 			</div><!--main结束-->
 		</div><!--wrap结束-->
 		<div class="copyright">

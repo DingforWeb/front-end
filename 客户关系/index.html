@@ -4,6 +4,8 @@
 		<meta charset="utf-8" />
 		<title>客户信息</title>
 		<link rel="stylesheet" href="css/main.css" /> 
+		<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+		<script type="text/javascript" src="js/myNavigation.js"></script>
 	</head>
 	<body>
 		<div class="top">
@@ -16,7 +18,8 @@
 						<li>
 							<form method="" >
 							<input class="search_text" type="text" class="search_text"/>
-							<input class="search_btn" type="submit" name="" id="" value="" /></form>
+							<input class="search_btn" type="submit" name="" id="" value="" />
+							</form>
 						</li>
 						
 						
@@ -64,16 +67,20 @@
 			<div class="main">
 				<div class="search_box">
 					<form id="search">
-						<fieldset>
-							<legend>客户信息查询</legend>
-							<span>客户编号：</span><br />
-							<input type="text" value="" /><br />
-							<span>客户名称：</span><br />
-							<input type="text" value="" /><br /><br />
-							<input type="submit" value="查询"/><br />
-						</fieldset>
+						<span>客户编号：</span>
+						<input type="text" value="" />
+						<span>客户名称：</span>
+						<input type="text" value="" />
+						<input type="submit" value="查询"/>
 					</form>
 				</div>
+				<div class="search_info">
+					<table>
+						<tr>
+							<th>选择</th><th>姓名</th><th>性别</th><th>职位</th><th>办公电话</th><th>手机</th><th>备注</th>
+						</tr>
+					</table>
+				</div><!-- search_info结束-->
 			</div><!--main结束-->
 		</div><!--wrap结束-->
 		<div class="copyright">
