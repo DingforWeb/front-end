@@ -90,6 +90,12 @@ body{
 	float:left;
 }
 
+.nav li ul li a.here{
+	color:red;
+	background: url(../img/right.png) no-repeat left center;
+}
+
+
 .nav>ul{
 	margin-left: 10px;
 }
@@ -119,7 +125,7 @@ body{
 	background: url(../img/right1.png) no-repeat left center;
 }
 
-.nav li ul li a,.nav li a{
+.nav a{
 	color: #FFFFFF;
 	text-decoration: none;
 	display: block;	
@@ -202,7 +208,7 @@ body{
 
 .main{
     width:85%;
-	height: 580px;
+	height: 583px;
 	background-color: #F1F2F7;
 	float:right;
 }
@@ -251,11 +257,15 @@ body{
 }
 
 
-
 .main_content{
 	width:85%;
 	margin:0 auto;
 	margin-top:20px;
+}
+.main_content_table{
+	margin:0 auto;
+	background-color: #fff;
+	padding:20px;
 }
 
 .main_content form{
@@ -274,6 +284,31 @@ body{
 	border:0;
 	line-height:35px;
 	margin:7px 5px;
+}
+
+#table{
+	width:100%;
+	border-collapse:collapse;
+}
+
+#table td,#table th{
+	text-align:center;
+	font-size:1em;
+	border: 1px solid ;
+	padding:3px 7px 2px 7px;
+}
+
+#table th{
+	font-size:1em;
+
+	padding-top:5px;
+	padding-bottom:4px;
+	background: #8E8E8E;
+	color:#fff;
+}
+
+#table tr.alt td{
+	background-color:#E8E8E8;
 }
 
 .btn{

@@ -1,10 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>客户信息</title>
+		<title>修改联系人</title>
 		<link rel="stylesheet" href="css/main.css" /> 
-		<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
 	</head>
 	<body>
 		<div class="top">
@@ -13,12 +12,11 @@
 				<div class="top_right">
 					<ul>
 						<li id="login"><a href="#">登录</a></li>
-						<li><a href="index.html"><img src="img/home.png"></a></li>
+						<li><a href="index.html"><img src="img/home.png"/></a></li>
 						<li>
 							<form method="" >
 							<input class="search_text" type="text" class="search_text"/>
-							<input class="search_btn" type="submit" name="" id="" value="" />
-							</form>
+							<input class="search_btn" type="submit" name="" id="" value="" /></form>
 						</li>
 						
 						
@@ -27,7 +25,7 @@
 			</div><!--top_content结束-->
 		</div><!--top结束-->
 		<div class="wrap">
-			<div class="nav" id="nav">
+			<div class="nav">
 				<ul >
 					<li id="nav1"><a href="index.html" >客户</a>
 						<ul>
@@ -35,7 +33,7 @@
 							<li><a href="customerlost.html">客户流失</a></li>
 						</ul>
 					</li>
-					<li id="nav2"><a href="#">业务机会</a>
+					<li id="nav2"><a href="salechance.html">业务机会</a>
 						<ul>
 							<li><a href="salechance.html">销售机会</a></li>
 							<li><a href="#">开发计划</a></li>
@@ -60,26 +58,26 @@
 			</div><!--nav结束-->			
 			<div class="nav_right">
 				<div class="nav_right_content">
-					<span><p>客户信息</p></span>
+					<span><p>修改联系人</p></span>
+					<button class="btn" src="#">新建</button>
 				</div>
 			</div><!--nav_right结束-->
 			<div class="main">
-				<div class="search_box">
-					<form id="search">
-						<span>客户编号：</span>
-						<input type="text" value="" />
-						<span>客户名称：</span>
-						<input type="text" value="" />
-						<input type="submit" value="查询"/>
+				<div class="main_content">
+					<s:property value="linkman.linkmanName"/>
+					<form action="addlinkman!addLinkman.action" method="post">
+						<span>名字：</span><input type="text" value="<s:property value="linkman.linkmanName"/>" name="linkmanName" /><br />
+						<span>性别：</span><input type="text" value="<s:property value="linkman.sex"/>" name="sex"> <br />
+						<span>职位：</span><input type="text" value="<s:property value="linkman.position"/>" name="position"><br />
+						<span>办公室电话：</span><input type="text" value="<s:property value="linkman.sex"/>" name="officePhone" /><br />
+						<span>手机：</span><input type="text" value="<s:property value="linkman.officePhone"/>" name="tele"  /> <br />
+						<span>备注：</span><input type="text" value="<s:property value="linkman.remark"/>" name="remark" /> <br />
+						<span>所属公司：</span><input type="text" value="<s:property value="linkman.sex"/>" name="firmId"  /> <br />
+						<input class="btn" type="submit" value="<s:property value="linkman.firmId"/>">
+						<button type="" src="" value="" class="btn">返回</button>
 					</form>
-				</div>
-				<div class="search_info">
-					<table>
-						<tr>
-							<th>选择</th><th>姓名</th><th>性别</th><th>职位</th><th>办公电话</th><th>手机</th><th>备注</th><th>操作</th>
-						</tr>
-					</table>
-				</div><!-- search_info结束-->
+					
+				</div >
 			</div><!--main结束-->
 		</div><!--wrap结束-->
 		<div class="copyright">
@@ -101,6 +99,5 @@
 				</ul>
 			</div>
 		</div><!--copyright结束-->
-		<script type="text/javascript" src="js/global.js"></script>
 	</body>
 </html>

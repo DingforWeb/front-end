@@ -46,11 +46,12 @@ function highlightPage(){
 }
 addLoadEvent(highlightPage);
 
-function moveElement(element_ID,final_x,final_y,interval){
+//幻灯片
+function moveElement(elementID,final_x,final_y,interval){
 	if(!document.getElementById) return false;
-	if(!document.getElementById(element_ID)) return false;
+	if(!document.getElementById(elementID)) return false;
 	
-	var elem=document.getElementById(element_ID);
+	var elem=document.getElementById(elementID);
 	if(elem.movement){
 		clearTimeout(elem.movement);
 	}
@@ -62,7 +63,7 @@ function moveElement(element_ID,final_x,final_y,interval){
 	}
 	var xpos=parseInt(elem.style.left);
 	var ypos=parseInt(elem.style.top);
-	if(xpos==final_x%%ypos==final_y){
+	if(xpos==final_x&&ypos==final_y){
 		return true;
 	}
 	if(xpos<final_x){
@@ -84,5 +85,87 @@ function moveElement(element_ID,final_x,final_y,interval){
 	elem.style.left=xpos+"px";
 	elem.style.top=ypos+"px";
 	var repeat="moveElement('"+elementID+"',"+final_x+","+final_y+","+interval+")";
-	elem.movement=setTimeiut(repeat,interval);
+	elem.movement=setTimeout(repeat,interval);
 }
+
+function prepareSlideshow(){
+	if(!document.getElementsByName) return false;
+	if(!document.getElementById) return false;
+	if(!document.getElementById("intro")) return false;
+	//将幻灯片放在intro文档之后
+	var intro=document.getElementById("intro");
+	var slideshow=document.createElement("div");
+	slideshow.setAttribute("id","slideshow");
+	var preview=document.createElement("img");
+	preview.setAttribute("src","img/slideshow.gif");
+	preview.setAttribute("alt","a glimpse of what awaits you");
+	preview.setAttribute("id","preview");
+	slideshow.appendChild(preview);
+	insertAfter(slideshow,intro);
+	
+	var frame=document.createElement("img");
+	frame.setAttribute("src","img/frame.gif");
+	frame.setAttribute("alt","");
+	frame.setAttribute("id","frame");
+	slideshow.appendChild(frame);
+	//遍历intro中所有的链接，并根据链接移动preview元素
+	var links=document.getElementsByTagName("a");
+//	var links=intro.getElementsByTagName("a");
+	var destination;
+	for(var i=0;i<links.length;i++){
+		links[i].onmouseover=function(){
+			destination=this.getAttribute("href");
+			if(destination.indexOf("index.html")!=-1){
+				moveElement("preview",0,0,5);
+			}
+			if(destination.indexOf("about.html")!=-1){
+				moveElement("preview",-150,0,5);
+			}
+			if(destination.indexOf("photos.html")!=-1){
+				moveElement("preview",-300,0,5);
+			}
+			if(destination.indexOf("live.html")!=-1){
+				moveElement("preview",-450,0,5);
+			}
+			if(destination.indexOf("contact.html")!=-1){
+				moveElement("preview",-600,0,5);
+			}
+		}
+	}
+	
+}
+addLoadEvent(prepareSlideshow);
+
+//内部导航
+function showSection(id){
+	var sections=document.getElementsByTagName("section");
+	for(var i=0;i<sections.length;i++){
+		if(sections[i].getAttribute("id")!=id);{
+			sections[i].style.display="none";
+		}else{
+			sections[i].style.display="block";
+		}
+	}
+}
+
+function prepareInternalnav(){
+	if(!document.getElementsByTagName) return false;
+	if(!document.getElementById) return false;
+	var articles=document.getElementsByTagName("article");
+	if(articles.length==0) return false;
+	var navs=articles[0].getElementsByTagName("nav");
+	if(navs.length==0) return false;
+	var nav=navs[0];
+	var links=nav.getElementsByTagName("a");
+	for(var i=0;i<links.length;i++){
+		var sectionId=links[i].getAttribute("href").split("#")[1];
+		if(!document.getElementById(sectionId)) continue;
+		document.getElementById(sectionId).style.display="none";
+		links[i].destination=sectionId;
+		links[i].onclick=function(){
+			showSection(this.destination);
+			return false;
+		}
+	}
+}
+addLoadEvent(prepareInternalnav);
