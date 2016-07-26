@@ -103,3 +103,7 @@ article img{
 	z-index: 99;
 	border: 0;
 }
+
+#imagegallery li{
+	display: inline;
+}
