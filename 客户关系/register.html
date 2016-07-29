@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>客户流失信息管理</title>
+		<title>创建用户</title>
 		<link rel="stylesheet" href="css/main.css" /> 
 	</head>
 	<body>
@@ -12,12 +12,14 @@
 				<div class="top_right">
 					<ul>
 						<li id="login"><a href="#">登录</a></li>
-						<li><a href="index.html"><img src="img/home.png"/></a></li>
+						<li><a href="index.html"><img src="img/home.png" /></a></li>
 						<li>
 							<form method="" >
 							<input class="search_text" type="text" class="search_text"/>
 							<input class="search_btn" type="submit" name="" id="" value="" /></form>
 						</li>
+						
+						
 					</ul>
 				</div>
 			</div><!--top_content结束-->
@@ -25,19 +27,19 @@
 		<div class="wrap">
 			<div class="nav">
 				<ul >
-					<li id="nav1"><a href="#" >客户</a>
+					<li id="nav1"><a href="index.html" >客户</a>
 						<ul>
-							<li><a href="#">客户信息</a></li>
-							<li><a href="#">客户流失</a></li>
+							<li><a href="index.html">客户信息</a></li>
+							<li><a href="customerlost.html">客户流失</a></li>
 						</ul>
 					</li>
-					<li id="nav2"><a href="#">业务机会</a>
+					<li id="nav2"><a href="salechance.html">业务机会</a>
 						<ul>
 							<li><a href="salechance.html">销售机会</a></li>
 							<li><a href="#">开发计划</a></li>
 						</ul>
 					</li>
-					<li id="nav3"><a href="#">服务</a></li>
+					<li id="nav3"><a href="service.html">服务</a></li>
 					<li id="nav4"><a href="#">统计报表</a>
 						<ul>
 							<li><a href="#">客户贡献</a></li>
@@ -65,33 +67,22 @@
 			</div><!--nav结束-->			
 			<div class="nav_right">
 				<div class="nav_right_content">
-					<span><p>客户流失信息管理</p></span>
+					<span><p>创建用户</p></span>
+					<button class="btn" src="#">新建</button>
 				</div>
 			</div><!--nav_right结束-->
 			<div class="main">
-				<div class="search_box">
-					<form id="search">
-						<span>客户经理：</span>
-						<input type="text" value="" />
-						<span>客户名称：</span>
-						<input type="text" value="" />
-						<span>状态：</span>
-						<select>
-							<option >流失</option>
-						</select>
-						<input type="submit" value="查询"/>
+				<div class="main_content">
+					<form action="registeruser" method="post" onsubmit="return check()"" >
+						<span> 用户名：</span><input type="text" name="usr_name"><br />
+						<span>密码：</span><input type="password" name="password" id="password"><br />
+						<span>重复输入密码：</span><input type="password" name="password" id="repsword"><br />
+						<span>权限：</span><select name="author" >  
+								<c:forEach items="${list}" var="author" varStatus="status">
+									<option name="${author.author_id }">${author.author_name }</option></select><br />
+						<input type="submit"value="注册" class="btn" id="register">  
 					</form>
-				</div>
-				<div class="search_info">
-					<table>
-						<tr>
-							<th ></th><th>编号</th><th>客户</th><th>经理</th><th>上次下单时间</th><th>确认流失时间</th><th>状态</th><th>操作</th>
-						</tr>
-						<tr>
-							<td></td><td>1</td><td>10086</td><td>联通</td><td>2016/5/8</td><td></td><td>暂缓流失</td><td><a>编辑</a></td>
-						</tr>
-					</table>
-				</div>
+				</div >
 			</div><!--main结束-->
 		</div><!--wrap结束-->
 		<div class="copyright">
@@ -113,5 +104,6 @@
 				</ul>
 			</div>
 		</div><!--copyright结束-->
+		<script src="js/global.js"></script>
 	</body>
 </html>

@@ -6,7 +6,7 @@
 		<link rel="stylesheet" href="css/main.css" /> 
 		<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
 	</head>
-	<body>
+	<body id="customer">
 		<div class="top">
 			<div class="top_content">
 				<div class="top_left"><img src="img/logo.jpg"/></div>
@@ -48,6 +48,15 @@
 							<li><a href="#">客户构成</a></li>
 							<li><a href="#">客户服务</a></li>
 							<li><a href="#">客户流失</a></li>
+						</ul>
+					</li>
+					<li id="nav3"><a href="search.html">查询中心</a>
+						<ul>
+							<li>
+								<form action="product!showAll.action" method="post" id="myForm">
+								<a href="#" onclick="myForm()">查询产品信息</a></form> 
+							</li>
+							<li><a href="search_stock">查询库存</a></li>
 						</ul>
 					</li>
 					<li id="nav5"><a href="#">管理员功能</a>

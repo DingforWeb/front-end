@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>显示客户详细信息</title>
+		<link rel="stylesheet" href="css/main.css" /> 
+	</head>
+	<body>
+		<div class="top">
+			<div class="top_content">
+				<div class="top_left"><img src="img/logo.jpg"/></div>
+				<div class="top_right">
+					<ul>
+						<li id="login"><a href="#">登录</a></li>
+						<li><a href="index.html"><img src="img/home.png"/></a></li>
+						<li>
+							<form method="" >
+							<input class="search_text" type="text" class="search_text"/>
+							<input class="search_btn" type="submit" name="" id="" value="" /></form>
+						</li>
+						
+						
+					</ul>
+				</div>
+			</div><!--top_content结束-->
+		</div><!--top结束-->
+		<div class="wrap">
+			<div class="nav">
+				<ul >
+					<li id="nav1"><a href="index.html" >客户</a>
+						<ul>
+							<li><a href="index.html">客户信息</a></li>
+							<li><a href="customerlost.html">客户流失</a></li>
+						</ul>
+					</li>
+					<li id="nav2"><a href="salechance.html">业务机会</a>
+						<ul>
+							<li><a href="salechance.html">销售机会</a></li>
+							<li><a href="#">开发计划</a></li>
+						</ul>
+					</li>
+					<li id="nav3"><a href="service.html">服务</a></li>
+					<li id="nav4"><a href="#">统计报表</a>
+						<ul>
+							<li><a href="#">客户贡献</a></li>
+							<li><a href="#">客户构成</a></li>
+							<li><a href="#">客户服务</a></li>
+							<li><a href="#">客户流失</a></li>
+						</ul>
+					</li>
+					<li id="nav3"><a href="search.html">查询中心</a>
+						<ul>
+							<li>
+								<form action="product!showAll.action" method="post" id="myForm">
+								<a href="#" onclick="myForm()">查询产品信息</a></form> 
+							</li>
+							<li><a href="search_stock">查询库存</a></li>
+						</ul>
+					</li>
+					<li id="nav5"><a href="#">管理员功能</a>
+						<ul>
+							<li><a href="#">管理用户</a></li>
+							<li><a href="#">管理数据字典</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div><!--nav结束-->			
+			<div class="nav_right">
+				<div class="nav_right_content">
+					<span><p>显示客户详细信息</p></span>
+					<form method="post" action="showlinkman" style="display:inline;"><button type="submit" class="btn" style="width:150px">显示该公司联系人</button></form>
+				</div>
+			</div><!--nav_right结束-->
+			<div class="main">
+				<div class="main_content">
+					<form>
+						<span>公司编号：</span><input type="text"  value="<s:property value="resultcustomer.customer_id"/>"/>
+						<span>公司名字：</span><input type="text"  value="<s:property value="resultcustomer.customer_name"/>"/><br />
+						<span>地域id：</span><input type="text"  value="<s:property value="resultcustomer.area_id"/>"/>
+						<span>负责人编号：</span><input type="text"  value="<s:property value="resultcustomer.usr_id"/>"/><br />
+						<span>顾客等级：</span><input type="text"  value="<s:property value="resultcustomer.level_id"/>"/>
+						<span>顾客满意度：</span><input type="text"  value="<s:property value="resultcustomer.satisfied_id"/>"/><br />
+						<span>信用度：</span><input type="text"  value="<s:property value="resultcustomer.credit_id"/>"/>
+						<span>地址：</span><input type="text"  value="<s:property value="resultcustomer.address"/>"/><br />
+						<span>mail：</span><input type="text"  value="<s:property value="resultcustomer.mailnumber"/>"/>
+						<span>电话：</span><input type="text"  value="<s:property value="resultcustomer.phone"/>"/><br />
+						<span>传真：</span><input type="text"  value="<s:property value="resultcustomer.fax"/>"/>
+						<span>网址：</span><input type="text"  value="<s:property value="resultcustomer.net"/>"/><br />
+						<span>营业执照：</span><input type="text"  value="<s:property value="resultcustomer.licence"/>"/>
+						<span>法人：</span><input type="text"  value="<s:property value="resultcustomer.lawman"/>"/><br />
+						<span>注册金验证：</span><input type="text"  value="<s:property value="resultcustomer.remoney"/>"/>
+						<span>年营业额：</span><input type="text"  value="<s:property value="resultcustomer.annulmoney"/>"/><br />
+						<span>开户银行：</span><input type="text"  value="<s:property value="resultcustomer.bank"/>"/>
+						<span>银行账号：</span><input type="text"  value="<s:property value="resultcustomer.count"/>"/><br />
+						<span>地税登记号：</span><input type="text"  value="<s:property value="resultcustomer.landtax"/>"/>
+						<span>国税登记号：</span><input type="text"  value="<s:property value="resultcustomer.countrytax"/>"/><br />
+						<span>当前状态：</span><input type="text"  value="<s:property value="resultcustomer.state"/>"/><br />
+						<s:a href="customerdetail!customerDetail.action?customer_id=%{customer_id}"><button class="btn" style="width:130px">显示详细信息</button></s:a>
+						<s:a href="modifylinkman!modifylinkman.action?linkmanID=%{linkmanID}"><button class="btn">修改</button></s:a>
+					</form>
+					
+				</div >
+			</div><!--main结束-->
+		</div><!--wrap结束-->
+		<div class="copyright">
+			<div class="copyright_content">
+				<ul>
+					<li><h2>关于</h2>
+						<ul>
+							<li>郁鸿淼</li>
+							<li>丁媛洁</li>
+						</ul>
+					</li>
+					<li><img src="img/wechat.png"/></li>
+					<li><h2>我们</h2>
+						<ul>
+							<li>张馨月</li>
+							<li>秦雪洲</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div><!--copyright结束-->
+	</body>
+</html>

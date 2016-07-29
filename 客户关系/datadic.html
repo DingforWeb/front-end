@@ -1,25 +1,22 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>数据字典管理</title>
+		<title>管理数据字典</title>
 		<link rel="stylesheet" href="css/main.css" /> 
-		<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
-		<script type="text/javascript" src="js/myNavigation.js"></script>
 	</head>
-	<body>
+	<body id="sale">
 		<div class="top">
 			<div class="top_content">
 				<div class="top_left"><img src="img/logo.jpg"/></div>
 				<div class="top_right">
 					<ul>
 						<li id="login"><a href="#">登录</a></li>
-						<li><a href="index.html"><img src="img/home.png"</a></li>
+						<li><a href="index.html"><img src="img/home.png"/></a></li>
 						<li>
 							<form method="" >
 							<input class="search_text" type="text" class="search_text"/>
-							<input class="search_btn" type="submit" name="" id="" value="" />
-							</form>
+							<input class="search_btn" type="submit" name="" id="" value="" /></form>
 						</li>
 						
 						
@@ -30,10 +27,10 @@
 		<div class="wrap">
 			<div class="nav">
 				<ul >
-					<li id="nav1"><a href="#" >客户</a>
+					<li id="nav1"><a href="index.html" >客户</a>
 						<ul>
-							<li><a href="#">客户信息</a></li>
-							<li><a href="customerlost.html">客户流失</a></li>
+							<li><a href="index.html">客户信息</a></li>
+							<li><a href="customerlost.thml">客户流失</a></li>
 						</ul>
 					</li>
 					<li id="nav2"><a href="#">业务机会</a>
@@ -51,6 +48,12 @@
 							<li><a href="#">客户流失</a></li>
 						</ul>
 					</li>
+					<li id="nav3"><a href="search.html">查询中心</a>
+						<ul>
+							<li><a href="search_goods">查询产品信息</a></li>
+							<li><a href="search_stock">查询库存</a></li>
+						</ul>
+					</li>
 					<li id="nav5"><a href="#">管理员功能</a>
 						<ul>
 							<li><a href="#">管理用户</a></li>
@@ -61,30 +64,37 @@
 			</div><!--nav结束-->			
 			<div class="nav_right">
 				<div class="nav_right_content">
-					<span><p>数据字典管理</p></span>
-					<a href="serviceadd.html"><button class="btn" >新建</button></a>
+					<span><p>管理数据字典</p></span>
+					<a href="datadicadd.html"><button class="btn" >新建</button></a>
 				</div>
 			</div><!--nav_right结束-->
 			<div class="main">
 				<div class="search_box">
-					<form id="search">
-						<span>类别：</span>
-						<input type="text" value="" />
-						<span>条目：</span>
-						<input type="text" value="" />
-						<span>值：</span>
-						<input type="text" value="" />
-						<input type="submit" value="查询"/>
-					</form>
+					<div class="search_box_content">
+						<form id="search" action="product!selectProduct.action" method="post" >
+							<span>类别：</span>
+							<input type="text" value="" name="product_name" />
+							<span>条目：</span>
+							<input type="text" value="" name="product_type"/>
+							<span>值：</span>
+							<input type="text" value="" name="product_batch"/>
+							<input type="submit" value="查询"/>
+						</form>
+					</div>
 				</div>
-				<div class="search_info">
-					<table>
-						<tr>
-							<th>编号</th><th>类别</th><th>条目</th><th>值</th><th>能否编辑</th><th>操作</th>
-							
-						</tr>
-					</table>
-				</div><!-- search_info结束-->
+				<div class="main_content">
+					<div class="main_content_table">
+						<table id="table">
+							<tr> 
+							<th>**编号**</th> 
+							<th>**类别**</th> 
+							<th>**条目**</th> 
+							<th>**编辑**</th>
+							<th>**操作**</th>
+							</tr> 
+						</table>
+					</div>
+				</div>
 			</div><!--main结束-->
 		</div><!--wrap结束-->
 		<div class="copyright">

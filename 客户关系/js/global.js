@@ -12,13 +12,16 @@ function addLoadEvent(func){
 function highlightPage(){
 	if(!document.getElementsByTagName) return false;
 	if(!document.getElementById) return false;
-	var nav=document.getElementById("nav");
-	if(nav==0) return false;
-	var links=nav.getElementsByTagName("a");
+	var bodyid=document.getElementsByTagName("body");
+	if(bodyid==0) return false;
+	var nav=bodyid[0].getAttribute("id");
+	var navs=document.getElementById("nav");
+	if(navs==0) return false;
+	var links=navs.getElementsByTagName("a");
 	var linkurl;
 	for(var i=0;i<links.length;i++){
 		linkurl=links[i].getAttribute("href");
-		if(window.location.href.indexOf(linkurl)!=-1){
+		if(linkurl.indexOf(nav)!=-1){
 			links[i].className="here";
 		}
 	}
@@ -26,6 +29,19 @@ function highlightPage(){
 
 addLoadEvent(highlightPage);
 
-$(function)(){
-	$("#table tr:even").className="alt";
-});
+function check(){
+	var password = document.getElementById("password").value; 
+	var repsword = document.getElementById("repsword").value; 
+	if(password != repsword) {
+		alert("两次密码不同，请重新输入");
+		return false;
+	} else {
+	   return true;
+	}
+}
+
+window.onload=function myForm(){
+	var form=document.getElementById("myForm");
+	form.submit();
+}
+

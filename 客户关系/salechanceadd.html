@@ -12,7 +12,7 @@
 				<div class="top_right">
 					<ul>
 						<li id="login"><a href="#">登录</a></li>
-						<li><a href="index.html"><img src="img/home.png"</a></li>
+						<li><a href="index.html"><img src="img/home.png"/></a></li>
 						<li>
 							<form method="" >
 							<input class="search_text" type="text" class="search_text"/>
@@ -48,6 +48,15 @@
 							<li><a href="#">客户流失</a></li>
 						</ul>
 					</li>
+					<li id="nav3"><a href="search.html">查询中心</a>
+						<ul>
+							<li>
+								<form action="product!showAll.action" method="post" id="myForm">
+								<a href="#" onclick="myForm()">查询产品信息</a></form> 
+							</li>
+							<li><a href="search_stock">查询库存</a></li>
+						</ul>
+					</li>
 					<li id="nav5"><a href="#">管理员功能</a>
 						<ul>
 							<li><a href="#">管理用户</a></li>
@@ -64,22 +73,22 @@
 			</div><!--nav_right结束-->
 			<div class="main">
 				<div class="main_content">
-					<form>
-						<span>编&nbsp;&nbsp;号：<input type="text" class="text" /></span>
-						<span>机会来源：<input type="text" class="text" /></span><br />
-						<span>客户名称：<input type="text" class="text" /></span>
-						<span>成功几率：<input type="text" class="text" /></span><br />
-						<span>概&nbsp;&nbsp;要：<input type="text" class="text" style="width:300px"></span><br />
-						<span>联系人：<input type="text" class="text" /></span>
-						<span>联系人电话：<input type="text" class="text" /></span><br />
-						<span>描&nbsp;&nbsp;述：<textarea rows="8" cols="40"></textarea></span><br />
-						<span>创建人：<input type="text" class="text" /></span>
-						<span>创建时间：<input type="text" class="text" /></span><br />
-						<span>指派人：<input type="text" class="text" /></span>
-						<span>指派时间：<input type="text" class="text" /></span><br />
+					<form action="creatchance" method="post">
+						<span>客户姓名：</span><input type="text"  />
+						<span>机会来源：</span><input type="text" name="source" /><br />
+						<span>成功几率：</span><input type="text" name="success" />
+						<span>概要：</span><input type="text" style="width:350px"  name="outline"><br />
+						<span>联系人：</span><input type="text" name="contact"/>
+						<span>联系人电话：</span><input type="text" name="contact_phone" /><br />
+						<span>描述：</span><textarea rows="8" cols="40" name="describe"></textarea><br />
+						<span>创建人：</span><input type="text" />
+						<span>创建时间：</span><input type="text" /><br />
+						<span>指派人：</span><input type="text"  />
+						<span>指派时间：</span><input type="text" /><br />
 						<input class="btn" type="submit" value="保存">
-						<button type="" src="" value="" class="btn">返回</button>
+						<a href="index.html"><button type=""class="btn" onclick="location.href='javascript:history.go(-1);'">返回</button></a>
 					</form>
+					
 					
 				</div >
 			</div><!--main结束-->
