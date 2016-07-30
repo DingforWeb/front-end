@@ -11,5 +11,10 @@ var variable=setTimeout("function",interval)能使函数function在经过interva
 2、若元素已到目的地，则退出函数
 3、若未到目的地，则将其向目的地移动一点
 4、经过一段时间后重新回到步骤1
-（灵活版）
-1、设置打算移动的元素id，目的地左位置，目的地右位置，停顿时间
+
+元素属性： element.property=value;
+element.foo="bar"; 为element创建一个名为foo的属性，值为bar。
+
+Math.ceil(number)返回大于浮点数最接近的整数
+Math.floor(number)返回小于浮点数最接近的整数
+Math.round(number)返回最接近浮点数的整数
