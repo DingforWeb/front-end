@@ -215,7 +215,6 @@ body{
 }
 
 .search_box{
-	margin:0 auto;
 	background-color: skyblue;
 	height:auto;
 	padding:10px 0;
@@ -251,6 +250,7 @@ body{
 	font-weight:bold;
 	border:0;
 	margin:0 15px;
+	border-radius: 5px;
 }
 
 #search input[type="submit"]:hover{
@@ -275,8 +275,9 @@ body{
 }
 .main_content span{
 	font-size:14px;
-	width: 80px;
+	width: 100px;
 	display:inline-block;
+	text-align: center;
 
 }
 .main_content input[type="text"],.main_content input[type="password"]{

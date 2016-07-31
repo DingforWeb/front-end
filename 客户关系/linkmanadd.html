@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+ <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8" />
@@ -48,15 +49,6 @@
 							<li><a href="#">客户流失</a></li>
 						</ul>
 					</li>
-					<li id="nav3"><a href="search.html">查询中心</a>
-						<ul>
-							<li>
-								<form action="product!showAll.action" method="post" id="myForm">
-								<a href="#" onclick="myForm()">查询产品信息</a></form> 
-							</li>
-							<li><a href="search_stock">查询库存</a></li>
-						</ul>
-					</li>
 					<li id="nav5"><a href="#">管理员功能</a>
 						<ul>
 							<li><a href="#">管理用户</a></li>
@@ -74,20 +66,18 @@
 			<div class="main">
 				<div class="main_content">
 					<form action="addlinkman!addLinkman.action" method="post">
-						<span>名字：</span><input type="text" name="linkmanName" /><br />
-						<span>性别：</span><input type="text" name="sex"> <br />
-						<span>职位：</span><input type="text" name="position"><br />
-						<span>办公室电话：</span><input type="text" name="officePhone" /><br />
-						<span>手机：</span><input type="text" name="tele"  /> <br />
-						<span>备注：</span><input type="text" name="remark" /> <br />
-						<span>所属公司：</span><input type="text" name="firmId"  /> <br />
+						<span>名字：</span><input type="text" value="nameless" name="linkmanName" /><br />
+						<span>性别：</span><input type="text" value="不详" name="sex"> <br />
+						<span>职位：</span><input type="text" value="不详" name="position"><br />
+						<span>办公室电话：</span><input type="text" value="999" name="officePhone" /><br />
+						<span>手机：</span><input type="text" value="999" name="tele"  /> <br />
+						<span>备注：</span><input type="text" value="不详" name="remark" /> <br />
+						<span>所属公司：</span><input type="text" value="999" name="firmId"  /> <br />
 						<input class="btn" type="submit" value="保存">
 						<button type="" src="" value="" class="btn">返回</button>
 					</form>
-					
-					
 
-					
+ 
 				</div >
 			</div><!--main结束-->
 		</div><!--wrap结束-->
@@ -110,5 +100,8 @@
 				</ul>
 			</div>
 		</div><!--copyright结束-->
+		<script type="text/javascript" src="js/global.js"></script>
 	</body>
+
 </html>
+ 

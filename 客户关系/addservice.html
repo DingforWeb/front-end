@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>创建服务</title>
+		<link rel="stylesheet" href="css/main.css" /> 
+	</head>
+	<body>
+		<div class="top">
+			<div class="top_content">
+				<div class="top_left"><img src="img/logo.jpg"/></div>
+				<div class="top_right">
+					<ul>
+						<li id="login"><a href="#">登录</a></li>
+						<li><a href="index.html"><img src="img/home.png"/></a></li>
+						<li>
+							<form method="" >
+							<input class="search_text" type="text" class="search_text"/>
+							<input class="search_btn" type="submit" name="" id="" value="" /></form>
+						</li>
+						
+						
+					</ul>
+				</div>
+			</div><!--top_content结束-->
+		</div><!--top结束-->
+		<div class="wrap">
+			<div class="nav">
+				<ul >
+					<li id="nav1"><a href="index.html" >客户</a>
+						<ul>
+							<li><a href="index.html">客户信息</a></li>
+							<li><a href="customerlost.html">客户流失</a></li>
+						</ul>
+					</li>
+					<li id="nav2"><a href="salechance.html">业务机会</a>
+						<ul>
+							<li><a href="salechance.html">销售机会</a></li>
+							<li><a href="#">开发计划</a></li>
+						</ul>
+					</li>
+					<li id="nav3"><a href="service.html">服务</a></li>
+					<li id="nav4"><a href="#">统计报表</a>
+						<ul>
+							<li><a href="#">客户贡献</a></li>
+							<li><a href="#">客户构成</a></li>
+							<li><a href="#">客户服务</a></li>
+							<li><a href="#">客户流失</a></li>
+						</ul>
+					</li>
+					<li id="nav3"><a href="search.html">查询中心</a>
+						<ul>
+							<li>
+								<form action="product!showAll.action" method="post" id="myForm">
+								<a href="#" onclick="myForm()">查询产品信息</a></form> 
+							</li>
+							<li><a href="search_stock">查询库存</a></li>
+						</ul>
+					</li>
+					<li id="nav5"><a href="#">管理员功能</a>
+						<ul>
+							<li><a href="#">管理用户</a></li>
+							<li><a href="#">管理数据字典</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div><!--nav结束-->			
+			<div class="nav_right">
+				<div class="nav_right_content">
+					<span><p>创建服务</p></span>
+					<button class="btn" src="#">新建</button>
+				</div>
+			</div><!--nav_right结束-->
+			<div class="main">
+				<div class="main_content">
+					<form action="addService" method="post">
+						<!--<span>公司编号：</span><input type="text"  value="9" name="customer_id"/>-->
+						
+						<span>服务类型：</span><s:select list="service_types"  listValue="type_name" listKey="type_name"  name="service_type.type_name"   
+           						headerKey="02" headerValue="" >  </s:select><br />
+						<span>概要</span><input type="text"  value="秦老板不服要赔偿" name="service_outline"/>
+						<span>客户编号：</span><s:select list="customers"  listValue="customer_name" listKey="customer_name"  name="customer.customer_name"   
+           						headerKey="02" headerValue="" >  </s:select><br />
+						<span>服务请求：</span><input type="text"  value="请求" name="service_request"/>
+						<span>顾客满意度：</span><input type="text"  value="9" name="satisfied_id"/><br />
+						<span>信用度：</span><input type="text"  value="9" name="credit_id"/>
+						<span>地址：</span><input type="text"  value="9" name="address"/><br />
+						<span>mail：</span><input type="text"  value="9" name="mailnumber"/>
+						<span>电话：</span><input type="text"  value="9" name="phone"/><br />
+						<span>传真：</span><input type="text"  value="9" name="fax"/>
+						<span>网址：</span><input type="text"  value="9" name="net"/><br />
+						<span>营业执照：</span><input type="text"  value="9" name="licence"/>
+						<span>法人：</span><input type="text"  value="9" name="lawman"/><br />
+						<span>注册金验证：</span><input type="text"  value="9" name="remoney" />
+						<span>年营业额：</span><input type="text"  value="9" name="annulmoney"/><br />
+						<span>开户银行：</span><input type="text"  value="9" name="bank"/>
+						<span>银行账号：</span><input type="text"  value="9" name="count"/><br />
+						<span>地税登记号：</span><input type="text"  value="9" name="landtax"/>
+						<span>国税登记号：</span><input type="text"  value="9" name="countrytax"/><br />
+						<span>当前状态：</span><input type="text"  value="9" name="state"/><br />
+						<input type="submit" value="添加" class="btn"> 
+						<input type="submit" value="返回" onclick="javascript:window.history.back(-1);" class="btn">
+						
+					</form>
+					
+				</div >
+			</div><!--main结束-->
+		</div><!--wrap结束-->
+		<div class="copyright">
+			<div class="copyright_content">
+				<ul>
+					<li><h2>关于</h2>
+						<ul>
+							<li>郁鸿淼</li>
+							<li>丁媛洁</li>
+						</ul>
+					</li>
+					<li><img src="img/wechat.png"/></li>
+					<li><h2>我们</h2>
+						<ul>
+							<li>张馨月</li>
+							<li>秦雪洲</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div><!--copyright结束-->
+	</body>
+</html>

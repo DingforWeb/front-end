@@ -1,8 +1,10 @@
+
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="utf-8" />
-		<title>创建服务</title>
+		<title>修改执行计划</title>
 		<link rel="stylesheet" href="css/main.css" /> 
 	</head>
 	<body>
@@ -48,15 +50,6 @@
 							<li><a href="#">客户流失</a></li>
 						</ul>
 					</li>
-					<li id="nav3"><a href="search.html">查询中心</a>
-						<ul>
-							<li>
-								<form action="product!showAll.action" method="post" id="myForm">
-								<a href="#" onclick="myForm()">查询产品信息</a></form> 
-							</li>
-							<li><a href="search_stock">查询库存</a></li>
-						</ul>
-					</li>
 					<li id="nav5"><a href="#">管理员功能</a>
 						<ul>
 							<li><a href="#">管理用户</a></li>
@@ -67,25 +60,17 @@
 			</div><!--nav结束-->			
 			<div class="nav_right">
 				<div class="nav_right_content">
-					<span><p>创建服务</p></span>
-					<button class="btn" src="#">新建</button>
+					<span><p>修改执行计划</p></span>
 				</div>
 			</div><!--nav_right结束-->
 			<div class="main">
 				<div class="main_content">
-					<form>
-						<span>编号：</span><input type="text"  />
-						<span>服务类型： </span><select><option>选择</option></select> <br />
-						<span>概要：</span><input type="text"  style="width: 300px;"><br />
-						<span>客户：</span><input type="text"  />
-						<span>状态： </span><select><option>选择</option></select> <br />
-						<span>服务请求：</span><textarea rows="10" cols="40"></textarea><br />
-						<span>创建人：</span><input type="text"  />
-						<span>创建时间：</span><input type="text"  /><br />
-						<input class="btn" type="submit" value="保存">
-						<button type="" src="" value="" class="btn">返回</button>
+					<form action="modifyplan2!modifyPlan2.action" method="post">
+						<span>日期：</span><input type="text" name="plan_date"/><br/>
+						<span>计划项：</span><input type="text" name="plan_item"/><br/>
+						<input type="submit" value="提交修改" class="btn" />
+						<input type="button" value="返回" onclick="javascript:window.history.back(-1);" class="btn"/> 
 					</form>
-					
 				</div >
 			</div><!--main结束-->
 		</div><!--wrap结束-->

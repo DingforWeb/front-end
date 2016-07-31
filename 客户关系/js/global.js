@@ -40,8 +40,10 @@ function check(){
 	}
 }
 
-window.onload=function myForm(){
+function myForm(){
 	var form=document.getElementById("myForm");
 	form.submit();
 }
 
+addLoadEvent(check);
+addLoadEvent(myForm);

@@ -48,15 +48,6 @@
 							<li><a href="#">客户流失</a></li>
 						</ul>
 					</li>
-					<li id="nav3"><a href="search.html">查询中心</a>
-						<ul>
-							<li>
-								<form action="product!showAll.action" method="post" id="myForm">
-								<a href="#" onclick="myForm()">查询产品信息</a></form> 
-							</li>
-							<li><a href="search_stock">查询库存</a></li>
-						</ul>
-					</li>
 					<li id="nav5"><a href="#">管理员功能</a>
 						<ul>
 							<li><a href="#">管理用户</a></li>
@@ -73,16 +64,16 @@
 			</div><!--nav_right结束-->
 			<div class="main">
 				<div class="main_content">
-					<s:property value="linkman.linkmanName"/>
-					<form action="addlinkman!addLinkman.action" method="post">
+					<form action="modifylinkman2!modifylinkman2.action" method="post">
+						<span>ID：</span><input type="text" disabled="true" value="<s:property value="linkman.linkmanID"/>" name="linkmanID" /><br />
 						<span>名字：</span><input type="text" value="<s:property value="linkman.linkmanName"/>" name="linkmanName" /><br />
 						<span>性别：</span><input type="text" value="<s:property value="linkman.sex"/>" name="sex"> <br />
 						<span>职位：</span><input type="text" value="<s:property value="linkman.position"/>" name="position"><br />
-						<span>办公室电话：</span><input type="text" value="<s:property value="linkman.sex"/>" name="officePhone" /><br />
-						<span>手机：</span><input type="text" value="<s:property value="linkman.officePhone"/>" name="tele"  /> <br />
+						<span>办公室电话：</span><input type="text" value="<s:property value="linkman.officePhone"/>" name="officePhone" /><br />
+						<span>手机：</span><input type="text" value="<s:property value="linkman.tele"/>" name="tele"  /> <br />
 						<span>备注：</span><input type="text" value="<s:property value="linkman.remark"/>" name="remark" /> <br />
-						<span>所属公司：</span><input type="text" value="<s:property value="linkman.sex"/>" name="firmId"  /> <br />
-						<input class="btn" type="submit" value="<s:property value="linkman.firmId"/>">
+						<span>所属公司：</span><input type="text" value="<s:property value="linkman.firmId"/>" name="firmId"  /> <br />
+						<input class="btn" type="submit" value="修改">
 						<button type="" src="" value="" class="btn">返回</button>
 					</form>
 					

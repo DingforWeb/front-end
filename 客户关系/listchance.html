@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" /> 
-		<title>查询产品信息</title>
+		<title>销售计划</title>
 		<link rel="stylesheet" href="css/main.css" /> 
 		<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
 	</head>
@@ -69,7 +69,7 @@
 			</div><!--nav结束-->			
 			<div class="nav_right">
 				<div class="nav_right_content">
-					<span><p>查询产品信息</p></span>
+					<span><p>销售计划</p></span>
 				</div>
 			</div><!--nav_right结束-->
 			<div class="main">
@@ -86,28 +86,28 @@
 				</div>
 				<div class="main_content">
 					<div class="main_content_table">
-						<table id="table">
-							<tr> 
-							<th>**编号**</th> 
-							<th>**名称**</th> 
-							<th>**型号**</th> 
-							<th>**等级/批次**</th>
-							<th>**单位**</th>
-							<th>**单价（元）**</th>
-							<th>**备注**</th>
-							</tr> 
-							<s:iterator value="list">
-								<tr>
-									<td><s:property value="product_id"/></td>
-									<td><s:property value="product_name"/></td>
-									<td><s:property value="product_type"/></td>
-									<td><s:property value="product_batch"/></td>
-									<td><s:property value="product_unit"/></td>
-									<td><s:property value="product_price"/></td>
-									<td><s:property value="remark"/></td>
-								</s:iterator>
-								</tr>
-						</table>
+						<form>
+							<s:iterator value="chances" status="st">
+								<span>编号:</span>
+								<input type="text"  value="<s:property value="chance_id"/>" readonly="readonly"/><br />
+								<span>客户:</span>
+								<input type="text"  value="<s:property value="customer.customer_name"/>" readonly="readonly"/><br />
+								<span>来源:</span>
+								<input type="text"  value="<s:property value="source"/>" readonly="readonly"/><br />
+								<span>几率:</span>
+								<input type="text"  value="<s:property value="success"/>" readonly="readonly"/><br />
+								<span>outline:</span>
+								<input type="text"  value="<s:property value="outline"/>" readonly="readonly"/><br />
+								<span>联系人:</span>
+								<input type="text"  value="<s:property value="contact"/>" readonly="readonly"/><br />
+								<span>联系电话:</span>
+								<input type="text"  value="<s:property value="contact_phone"/>" readonly="readonly"/><br />
+								<span>描述:</span>
+								<input type="text"  value="<s:property value="describe"/>" readonly="readonly"/><br />
+								<s:property value="chance_id"/>
+								<a href="searchchance?chance_id=${chance_id }">详情</a>
+							</s:iterator>
+						</form>						
 					</div>
 				</div>
 			</div><!--main结束-->

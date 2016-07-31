@@ -1,13 +1,13 @@
 
 <!DOCTYPE html>
 <html>
+
 	<head>
-		<meta charset="utf-8" /> 
-		<title>查询产品信息</title>
+		<meta charset="utf-8" />
+		<title>新建执行计划</title>
 		<link rel="stylesheet" href="css/main.css" /> 
-		<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
 	</head>
-	<body id="sale">
+	<body>
 		<div class="top">
 			<div class="top_content">
 				<div class="top_left"><img src="img/logo.jpg"/></div>
@@ -32,10 +32,10 @@
 					<li id="nav1"><a href="index.html" >客户</a>
 						<ul>
 							<li><a href="index.html">客户信息</a></li>
-							<li><a href="customerlost.thml">客户流失</a></li>
+							<li><a href="customerlost.html">客户流失</a></li>
 						</ul>
 					</li>
-					<li id="nav2"><a href="#">业务机会</a>
+					<li id="nav2"><a href="salechance.html">业务机会</a>
 						<ul>
 							<li><a href="salechance.html">销售机会</a></li>
 							<li><a href="#">开发计划</a></li>
@@ -50,15 +50,6 @@
 							<li><a href="#">客户流失</a></li>
 						</ul>
 					</li>
-					<li id="nav3"><a href="search.html">查询中心</a>
-						<ul>
-							<li>
-								<form action="product!showAll.action" method="post" id="myForm">
-								<a href="#" onclick="myForm()">查询产品信息</a></form> 
-							</li>
-							<li><a href="search_stock">查询库存</a></li>
-						</ul>
-					</li>
 					<li id="nav5"><a href="#">管理员功能</a>
 						<ul>
 							<li><a href="#">管理用户</a></li>
@@ -69,47 +60,19 @@
 			</div><!--nav结束-->			
 			<div class="nav_right">
 				<div class="nav_right_content">
-					<span><p>查询产品信息</p></span>
+					<span><p>新建执行计划</p></span>
 				</div>
 			</div><!--nav_right结束-->
 			<div class="main">
-				<div class="search_box">
-					<form id="search" action="product2!selectProduct.action" method="post" >
-						<span>名称：</span>
-						<input type="text" value="" name="product_name" />
-						<span>型号：</span>
-						<input type="text" value="" name="product_type"/>
-						<span>批次：</span>
-						<input type="text" value="" name="product_batch"/>
-						<input type="submit" value="查询"/>
-					</form>
-				</div>
 				<div class="main_content">
-					<div class="main_content_table">
-						<table id="table">
-							<tr> 
-							<th>**编号**</th> 
-							<th>**名称**</th> 
-							<th>**型号**</th> 
-							<th>**等级/批次**</th>
-							<th>**单位**</th>
-							<th>**单价（元）**</th>
-							<th>**备注**</th>
-							</tr> 
-							<s:iterator value="list">
-								<tr>
-									<td><s:property value="product_id"/></td>
-									<td><s:property value="product_name"/></td>
-									<td><s:property value="product_type"/></td>
-									<td><s:property value="product_batch"/></td>
-									<td><s:property value="product_unit"/></td>
-									<td><s:property value="product_price"/></td>
-									<td><s:property value="remark"/></td>
-								</s:iterator>
-								</tr>
-						</table>
-					</div>
-				</div>
+					<form action="updateplan!updatePlan.action" method="post">
+					    <span>日期：</span><input type="text" value="<s:property value="plan2.plan_date"/>" name="plan_date"/><br/>
+						<span>计划项：</span><input type="text" value="<s:property value="plan2.plan_item"/>" name="plan_item"/><br/>
+						<span>执行结果：</span><input type="text"  name="result"/><br/>
+						<input type="submit" value="保存" class="btn"/>
+						<input type="button" value="返回" onclick="javascript:window.history.back(-1);" class="btn"/> 
+					</form>
+				</div >
 			</div><!--main结束-->
 		</div><!--wrap结束-->
 		<div class="copyright">
@@ -131,12 +94,5 @@
 				</ul>
 			</div>
 		</div><!--copyright结束-->
-		<!--<script type="text/javascript">
-		window.onload=function myForm(){
-			var form=document.getElementById("myForm");
-			form.submit();
-		}
-		</script>-->
 	</body>
 </html>
-tml>
