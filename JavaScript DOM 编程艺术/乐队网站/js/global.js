@@ -140,7 +140,7 @@ addLoadEvent(prepareSlideshow);
 function showSection(id){
 	var sections=document.getElementsByTagName("section");
 	for(var i=0;i<sections.length;i++){
-		if(sections[i].getAttribute("id")!=id);{
+		if(sections[i].getAttribute("id")!=id){
 			sections[i].style.display="none";
 		}else{
 			sections[i].style.display="block";
@@ -151,6 +151,7 @@ function showSection(id){
 function prepareInternalnav(){
 	if(!document.getElementsByTagName) return false;
 	if(!document.getElementById) return false;
+	//遍历article中的nav链接
 	var articles=document.getElementsByTagName("article");
 	if(articles.length==0) return false;
 	var navs=articles[0].getElementsByTagName("nav");
@@ -158,9 +159,12 @@ function prepareInternalnav(){
 	var nav=navs[0];
 	var links=nav.getElementsByTagName("a");
 	for(var i=0;i<links.length;i++){
+//		以#分隔字符串,得到#后的字符
 		var sectionId=links[i].getAttribute("href").split("#")[1];
 		if(!document.getElementById(sectionId)) continue;
+		//默认隐藏所有部分
 		document.getElementById(sectionId).style.display="none";
+		//destination为自定义属性，保存局部变量sectionid
 		links[i].destination=sectionId;
 		links[i].onclick=function(){
 			showSection(this.destination);
@@ -180,7 +184,7 @@ function preparePlaceholder(){
 //	创建img元素节点,设置id属性为placeholder,设置src属性,设置alt属性.
 	var placeholder=document.createElement("img");
 	placeholder.setAttribute("id" ,"placeholder");
-	placeholder.setAttribute("src","images/Chrysanthemum.jpg");
+	placeholder.setAttribute("src","img/placeholder.gif");
 	placeholder.setAttribute("alt","my image gallery");
 //	创建p元素节点,设置id为description,创建文本节点,追加到P上
 	var description=document.createElement("p");
@@ -239,3 +243,34 @@ function showPic(whichpic){
 
 addLoadEvent(preparePlaceholder);
 addLoadEvent(prepareGallery);
+
+function stripeTables(){
+	if(!document.getElementsByTagName) return false;
+	var tables=document.getElementsByTagName("table");
+	for(int i=0;i<tables.length;i++){
+		var odd=false;
+		var rows=tables[i].getElementsByTagName("tr");
+		for(var j=0;j<rows.length;j++){
+			if(odd){
+				addClass(rows[j],"odd");
+				odd=false;
+			}else{
+				odd=true;
+			}
+		}
+	}
+}
+
+function highlightRows(){
+	if(!document.getElementsByTagName) return false;
+	var rows=document.getElementsByTagName("tr");
+	for(var i=0;i<rows.length;i++){
+		rows[i].oldClassName=rows[i].className;
+		rows[i].onmouseover=function(){
+			addClassName(this,"highlight");
+		}
+		rows[i].onmouseout=function(){
+			this.className=this.oldClassName;
+		}
+	}
+}

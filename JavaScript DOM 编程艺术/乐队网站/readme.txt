@@ -5,4 +5,6 @@ window.location.href指当前页面的url
 
 toLowerCase()将文本转化为小写
 
+array=string.split(character)将一个字符串分隔为两个或多个部分
+
 

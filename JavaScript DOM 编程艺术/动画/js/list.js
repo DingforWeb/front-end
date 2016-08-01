@@ -10,12 +10,32 @@ function addLoadEvent(func){
 		}
 	}
 }
+
+function insertAfter(newElement,targetElement){
+	var parent=targetElement.parentNode;
+	if(parent.lastChild==targetElement){
+		parent.appendChild(newElement);
+	}else{
+		parent.insertBefore(newElement,targetElement.nextSibling);
+	}
+}
+
 function prepareSlideshow(){
 	if(!document.getElementById) return false;
 	if(!document.getElementsByTagName) return false;
 	if(!document.getElementById("linklist")) return false;
-	if(!document.getElementById("preview")) return false;
+//	if(!document.getElementById("preview")) return false;
+	//创建HTML标记
+	var slideshow=document.createElement("div");
+	slideshow.setAttribute("id","slideshow");
+	var preview=document.createElement("img");
+	preview.setAttribute("src","img/topics.gif");
+	preview.setAttribute("alt","building blocks of web");
+	preview.setAttribute("id","preview");
+	slideshow.appendChild(preview);
 	
+	var list=document.getElementById("linklist");
+	insertAfter(slideshow,list);
 	
 	//设置图片应用样式
 	var preview=document.getElementById("preview");
@@ -38,6 +58,7 @@ function prepareSlideshow(){
 	}
 	
 }
+addLoadEvent(prepareSlideshow);
 
 function moveElement(elementID,final_x,final_y,interval){
 	if(!document.getElementById) return false;
@@ -97,4 +118,3 @@ function moveElement(elementID,final_x,final_y,interval){
 //	将movement作为elem的属性，当其存在时，使用clearTimeout函数
 	elem.movement=setTimeout(repeat,interval);
 }
-addLoadEvent(prepareSlideshow);
