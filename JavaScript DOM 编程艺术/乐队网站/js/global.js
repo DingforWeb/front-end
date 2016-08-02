@@ -247,11 +247,11 @@ addLoadEvent(prepareGallery);
 function stripeTables(){
 	if(!document.getElementsByTagName) return false;
 	var tables=document.getElementsByTagName("table");
-	for(int i=0;i<tables.length;i++){
+	for(var i=0; i<tables.length ; i++){
 		var odd=false;
 		var rows=tables[i].getElementsByTagName("tr");
-		for(var j=0;j<rows.length;j++){
-			if(odd){
+		for(var j=0 ; j<rows.length ; j++){
+			if(odd==true){
 				addClass(rows[j],"odd");
 				odd=false;
 			}else{
@@ -274,3 +274,95 @@ function highlightRows(){
 		}
 	}
 }
+
+function displayAbbreviations(){
+	if(!document.getElementsByTagName||!document.createElement||!document.createTextNode) return false;
+	var abbreviations=document.getElementsByTagName("abbr");
+	if(abbreviations.length<1) return false;
+	var defs=new Array();
+	for(var i=0;i<abbreviations.length;i++){
+		var current_abbr=abbreviations[i];
+		if(current_abbr.childNodes.length<1) continue;
+		var definition=current_abbr.getAttribute("title");
+		var key=current_abbr.lastChild.nodeValue;
+		defs[key]=definition;
+	}
+	var dlist=document.createElement("dl");
+	for(key in defs){
+		var definition=defs[key];
+		var dtitle=document.createElement("dt");
+		var dtitle_text=document.createTextNode(key);
+		dtitle.appendChild(dtitle_text);
+		var ddesc=document.createElement("dd");
+		var ddesc_text=document.createTextNode(definition);
+		ddesc.appendChild(ddesc_text);
+		dlist.appendChild(dtitle);
+		dlist.appendChild(ddesc);
+	}
+	if(dlist.childNodes.length<1) return false;
+	var header=document.createElement("h3");
+	var header_text=document.createTextNode("Abbreviations");
+	header.appendChild(header_text);
+	var articles=document.getElementsByTagName("article");
+	if(articles.length==0) return false;
+	var container=articles[0];
+	container.appendChild(header);
+	container.appendChild(dlist);
+}
+
+addLoadEvent(stripeTables);
+addLoadEvent(highlightPage);
+addLoadEvent(displayAbbreviations);
+
+//使表单字段获得焦点 
+function focusLables(){
+	if(!document.getElementsByTagName) return false;
+	var labels=document.getElementsByTagName("label");
+	for(var i=0;i<labels.length;i++){
+		if(!labels[i].getAttribute("for")) continue;
+		labels[i].onclick=function(){
+			var id=this.getAttribute("for");
+			if(!document.getElementById(id)) return false;
+			var element=document.getElementById(id);
+			element.focus();
+		}
+	}
+}
+addLoadEvent(focusLables);
+
+//placeholder的js表达法
+function resetFields(whichform){
+	if(Modernizr.input.placeholder) return false;
+	//遍历表单中的每个元素
+	for(var i=0;i<whichform.elements.length;i++){
+		var element=whichform.elements[i];
+		//若为提交按钮，跳过
+		if(element.type=="submit") continue;
+		var check=element.placeholder||element.getAttribute("placeholder");
+		if(!check) continue;
+		//设置焦点事件处理函数，若字段的值等于占位符的值，则将字段的值设为空
+		element.onfocus=function(){
+			var text=this.placeholder||this.getAttribute("placeholder");
+			if(this.value==text){
+				this.className='';
+				this.value='';
+			}
+		}
+		//设置失去焦点事件的处理函数，若字段的值为空，则添加占位符值
+		element.onblur=function(){
+			if(this.value=""){
+				this.className='placeholder';
+				this.value=this.placeholder||this.getAttribute("placeholder");
+			}
+		}
+		element.onblur();
+	}
+}
+
+function prepareForms(){
+	for(var i=0; i<document.forms.length;i++){
+		var thisform=document.forms[i];
+		resetFields(thisform);
+	}
+}
+addLoadEvent(prepareForms);
