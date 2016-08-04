@@ -363,6 +363,35 @@ function prepareForms(){
 	for(var i=0; i<document.forms.length;i++){
 		var thisform=document.forms[i];
 		resetFields(thisform);
+		thisform.onsubmit=function(){
+			return validateForm(this);
+		}
 	}
 }
 addLoadEvent(prepareForms);
+
+//验证表单
+function validateForm(form){
+	for(var i=o;i<whichform.elements.length;i++){
+		var element=whichform.elements[i];
+		if(element.required=="required"){
+			if(!isFilled(element)){
+				alert("请填写");
+				return false;
+			}
+		}
+		if(element.type=="email"){
+			if(!isEmail(element)){
+				alert("The"+element.name+"field must be a valid email address");
+				return false;
+			}
+		}
+	}
+	return false;
+}
+
+function isFilled(field){
+	if(field.value.replace("","").length==0) return false;
+	var placeholder=field.placeholder||field.getAttribute("placeholder");
+	return (field.value!=placeholder);
+}
