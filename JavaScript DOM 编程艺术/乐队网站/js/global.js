@@ -395,3 +395,23 @@ function isFilled(field){
 	var placeholder=field.placeholder||field.getAttribute("placeholder");
 	return (field.value!=placeholder);
 }
+function isEmail(field){
+	return (field.value.indexOf("@")!=-1&&field.value.indexOf(".")!=-1);
+}
+
+//提交表单
+function getHTTPObject(){
+	if(typeof XMLHttpRequest=="undefined")
+	XMLHttpRequest=function(){
+		try{
+			return new ActiveXObject("Msxml2.XMLHTTP.6.0");
+			catch(e){}
+			return new ActiveXObject("Msxml2.XMLHTTP.3.0");
+			catch(e){}
+			return new ActiveXObject("Msxml2.XMLHTTP");
+			catch(e){}
+			return false;
+		}
+		return new XMLHttpRequest();
+	}
+}
