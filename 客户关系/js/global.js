@@ -1,4 +1,4 @@
-function addLoadEvent(func){
+﻿function addLoadEvent(func){
 	var oldonload=window.onload;
 	if(typeof window.onload!="function"){
 		window.onload=func;
@@ -9,6 +9,7 @@ function addLoadEvent(func){
 		}
 	}
 }
+//当前页导航高亮
 function highlightPage(){
 	if(!document.getElementsByTagName) return false;
 	if(!document.getElementById) return false;
@@ -23,12 +24,13 @@ function highlightPage(){
 		linkurl=links[i].getAttribute("href");
 		if(linkurl.indexOf(nav)!=-1){
 			links[i].className="here";
+			links[i].parentNode.parentNode.style.display="block";
 		}
 	}
 }
 
 addLoadEvent(highlightPage);
-
+//输入验证
 function check(){
 	var password = document.getElementById("password").value; 
 	var repsword = document.getElementById("repsword").value; 
@@ -39,11 +41,48 @@ function check(){
 	   return true;
 	}
 }
-
+//提交表单
 function myForm(){
 	var form=document.getElementById("myForm");
 	form.submit();
 }
 
-addLoadEvent(check);
-addLoadEvent(myForm);
+
+function change_home_img(){
+	var img=document.getElementById("home_img");
+	img.src="img/home1.png";
+}
+
+function return_home_page(){
+	var img=document.getElementById("home_img");
+	img.src="img/home.png";
+}
+//搜索
+function show_search_text(){
+	var text=document.getElementById("search_text");
+	var search_all=document.getElementById("search_all");
+	if(text.style.display == ""){
+		text.style.display="inline-block";
+	}else{
+		search_all.submit();
+	}
+}
+
+function preparenavshow(){
+	var nav=document.getElementById("nav");
+	var navs=nav.getElementsByClassName("fnav");
+	for(var i=0;i<navs.length;i++){
+		navs[i].onclick=function(){
+			var sub_nav=this.parentNode.getElementsByTagName("ul");
+			if(sub_nav[0].style.display==""){
+				sub_nav[0].style.display="block";
+			}else{
+				sub_nav[0].style.display="";
+			}
+			return false;
+		}
+	}
+}
+
+
+addLoadEvent(preparenavshow);

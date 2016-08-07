@@ -4,19 +4,22 @@
 		<meta charset="utf-8" />
 		<title>显示交往记录</title>
 		<link rel="stylesheet" href="css/main.css" /> 
+		<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+		<script type="text/javascript" src="js/global.js"></script>
 	</head>
-	<body>
+	<body id="customer">
 		<div class="top">
 			<div class="top_content">
 				<div class="top_left"><img src="img/logo.jpg"/></div>
 				<div class="top_right">
 					<ul>
 						<li id="login"><a href="#">登录</a></li>
-						<li><a href="index.html"><img src="img/home.png"/></a></li>
+						<li ><a href="index.html" onmouseover="change_home_img()" onmouseout="return_home_page()"><img src="img/home.png" alt="home" id="home_img" /></a></li>
 						<li>
-							<form method="" >
-							<input class="search_text" type="text" class="search_text"/>
-							<input class="search_btn" type="submit" name="" id="" value="" /></form>
+							<form method="" id="search_all">
+							<input type="text" id="search_text"/>
+							<input type="button" id="search_img" value="" onclick="show_search_text()"/>
+							</form>
 						</li>
 						
 						
@@ -25,22 +28,22 @@
 			</div><!--top_content结束-->
 		</div><!--top结束-->
 		<div class="wrap">
-			<div class="nav">
+			<div class="nav" id="nav">
 				<ul >
-					<li id="nav1"><a href="index.html" >客户</a>
+					<li id="nav1" ><a class="fnav" href="#" >客户</a>
 						<ul>
 							<li><a href="index.html">客户信息</a></li>
 							<li><a href="customerlost.html">客户流失</a></li>
 						</ul>
 					</li>
-					<li id="nav2"><a href="salechance.html">业务机会</a>
+					<li id="nav2" ><a class="fnav" href="#">业务机会</a>
 						<ul>
 							<li><a href="salechance.html">销售机会</a></li>
 							<li><a href="#">开发计划</a></li>
 						</ul>
 					</li>
-					<li id="nav3"><a href="service.html">服务</a></li>
-					<li id="nav4"><a href="#">统计报表</a>
+					<li id="nav3" ><a class="fnav"  href="service.html">服务</a></li>
+					<li id="nav4" ><a class="fnav" href="#">统计报表</a>
 						<ul>
 							<li><a href="#">客户贡献</a></li>
 							<li><a href="#">客户构成</a></li>
@@ -48,7 +51,7 @@
 							<li><a href="#">客户流失</a></li>
 						</ul>
 					</li>
-					<li id="nav3"><a href="search.html">查询中心</a>
+					<li id="nav3" ><a class="fnav" href="search.html">查询中心</a>
 						<ul>
 							<li>
 								<form action="product!showAll.action" method="post" id="myForm">
@@ -57,7 +60,7 @@
 							<li><a href="search_stock">查询库存</a></li>
 						</ul>
 					</li>
-					<li id="nav5"><a href="#">管理员功能</a>
+					<li id="nav5" ><a class="fnav" href="#">管理员功能</a>
 						<ul>
 							<li><a href="#">管理用户</a></li>
 							<li><a href="#">管理数据字典</a></li>
