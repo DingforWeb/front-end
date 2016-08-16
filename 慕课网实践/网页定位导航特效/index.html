@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>网页定位导航效果</title>
+		<style type="text/css" >
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				font-size: 12px;
+				line-height: 1.7;
+			}
+			li{
+				list-style: none;
+			}
+			#content{
+				width: 800px;
+				margin: 0 auto;
+				padding: 20px;
+			}
+			#content h1{
+				color: #0088bb;
+			}
+			#content .item{
+				padding: 20px;
+				margin-bottom: 20px;
+				border: 1px dotted #0088BB;
+			}
+			#content .item h2{
+				font-size: 16px;
+				font-weight: bold;
+				border-bottom: 2px solid #0088bb;
+				margin-bottom: 10px;
+			}
+			#content .item li{
+				display: inline;
+				margin-right: 10px;
+			}
+			#content .item li a img{
+				width: 230px;
+				height: 230px;
+				border: 0;
+			}
+			#menu{
+				position: fixed;
+				top: 100px;
+				/*中部向右偏移*/
+				left: 50%;
+				margin-left: 400px;
+			}
+			#menu ul li a{
+				display: block;
+				margin: 5px 0;
+				font-size: 14px;
+				font-weight: bold;
+				color: #333;
+				width: 80px;
+				height: 50px;
+				line-height: 50px;
+				text-decoration: none;
+				text-align: center;
+				
+			}
+			#menu ul li a:hover,#menu ul li a.current{
+				color: #fff;
+				background-color: #0088BB;
+			}
+		</style>
+		<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//滚动条发生滚动
+				$(window).scroll(function(){
+					var top=$(document).scrollTop();
+					//console.log(top);
+					var menu=$("#menu");
+					//通过id筛选效率高
+					var item=$("#content").find(".item");
+					
+					var currentId="";//当前所在楼层id
+					//遍历
+					item.each(function(){
+						var m=$(this);
+						var itemTop=m.offset().top;
+						//console.log(itemTop);
+						if(top>itemTop-200){
+							currentId="#"+m.attr("id");
+						}else{
+							return false;
+						}
+						
+					});
+					//给当前楼层添加class，去掉前楼层的class
+					var currentLink=menu.find(".current");
+					//判断currentid是否为空或是否处于当前位置
+					if(currentId&&currentLink.attr("href")!=currentId){
+						currentLink.removeClass("current");
+						menu.find("[href="+currentId+"]").addClass("current");
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="menu">
+			<ul>
+				<li><a href="#item1" >1F 护肤</a></li>
+				<li><a href="#item2">2F 彩妆</a></li>
+				<li><a href="#item3">3F 电器</a></li>
+				<li><a href="#item4">4F 数码</a></li>
+				<li><a href="#item5">5F 美食</a></li>
+			</ul>
+		</div>
+		<div id="content">
+			<h1>丁丁购物网</h1>
+			<div id="item1" class="item">
+				<h2>1F 护肤</h2>
+				<ul>
+					<li><a href="#"><img src="img/1F.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="img/1F.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="img/1F.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="img/1F.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="img/1F.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="img/1F.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="img/1F.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="img/1F.jpg" alt="" /></a></li>
+				</ul>
+			</div>
+			<div id="item2" class="item">
+				<h2>2F 彩妆</h2>
+				<ul>
+					<li><a href="#"><img src="img/2F.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="img/2F.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="img/2F.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="img/2F.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="img/2F.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="img/2F.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="img/2F.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="img/2F.jpg" alt="" /></a></li>
+				</ul>
+			</div>
+			<div id="item3" class="item">
+				<h2>3F 电器</h2>
+				<ul>
+					<li><a href="#"><img src="img/3F.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="img/3F.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="img/3F.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="img/3F.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="img/3F.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="img/3F.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="img/3F.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="img/3F.jpg" alt="" /></a></li>
+				</ul>
+			</div>
+			<div id="item4" class="item">
+				<h2>4F 数码</h2>
+				<ul>
+					<li><a href="#"><img src="img/4F.png" alt="" /></a></li>
+					<li><a href="#"><img src="img/4F.png" alt="" /></a></li>
+					<li><a href="#"><img src="img/4F.png" alt="" /></a></li>
+					<li><a href="#"><img src="img/4F.png" alt="" /></a></li>
+					<li><a href="#"><img src="img/4F.png" alt="" /></a></li>
+					<li><a href="#"><img src="img/4F.png" alt="" /></a></li>
+					<li><a href="#"><img src="img/4F.png" alt="" /></a></li>
+					<li><a href="#"><img src="img/4F.png" alt="" /></a></li>
+				</ul>
+			</div>
+			<div id="item5" class="item">
+				<h2>5F 美食</h2>
+				<ul>
+					<li><a href="#"><img src="img/5F.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="img/5F.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="img/5F.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="img/5F.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="img/5F.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="img/5F.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="img/5F.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="img/5F.jpg" alt="" /></a></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
