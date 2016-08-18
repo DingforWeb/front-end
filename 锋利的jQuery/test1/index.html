@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>单选框必选</title>
+		<script src="js/jquery-3.1.0.min.js"></script>
+	</head>
+	<body>
+		<input type="checkbox" id="cr" />
+		<label for="cr">我已经阅读了上面协议。</label>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var $cr=$("#cr");
+				var cr=$cr[0];
+				$cr.click(function(){
+					if(cr.checked){
+						alert("感谢您的支持！");
+					}
+				});
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,22 @@
+	         Window.onload	                 $(document).ready()
+执行时机	等网页中的所有内容加载完毕后（包括图片）执行	网页中所有DOM结构绘制完毕后执行
+编写个数	不能同时编写多个，编写多个输出最后一个	          可同时编写多个
+简化写法	无	                                $(function(){});
+
+jQuery对象是通过jQuery包装DOM对象后产生的对象，它只能使用jQuery里的方法，不能使用DOM里的方法，DOM对象也不能使用jQuery里的方法。
+
+jQuery转换为DOM对象
+（一）	jQuery对象是一个数组对象，使用[index]方法得到相应的DOM对象
+		var $cr=$(“#cr”);
+		var cr=$cr[0];
+		alert(cr.checked);
+（二）	用jQuery提供的get(index)方法
+		var $cr=$(“#cr”);
+		var cr=$cr.get(0);
+		alert(cr.checked);
+DOM对象转换为jQuery对象
+用$()把DOM对象包装起来即可
+		var cr=document.getElementById(“cr”);
+		var $cr=$(cr);
+
+jQuery.noConflict()将$的控制权移交给其他库，防止当与其他库一起使用时，发生冲突。

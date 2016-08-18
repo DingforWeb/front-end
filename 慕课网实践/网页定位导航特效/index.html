@@ -67,8 +67,20 @@
 				color: #fff;
 				background-color: #0088BB;
 			}
+			/*ie6 hack */
+			* html,* html body{
+				background-image: url(about:blank);
+				background-attachment: fixed;
+			}
+			* html #menu{
+				/*position: fixed;*/
+				position: absolute;
+				top: expression(((e=document.documentElement.scrollTop)?e:document.body.scrollTop)+100+'px');
+			}
 		</style>
 		<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+		<!--
+        	
 		<script type="text/javascript">
 			$(document).ready(function(){
 				//滚动条发生滚动
@@ -101,6 +113,70 @@
 					}
 				});
 			});
+
+		</script>
+		
+        -->
+        <!--js方法-->
+		<script type="text/javascript">
+		//根据classname获取元素
+		function getByClassName(obj,clas){
+			var elements=obj.getElementsByTagName("*");
+			var result=[];
+			for (var i=0;i<elements.length;i++) {
+				if(elements[i].className==cls){
+					result.push(elements[i]);
+				}
+			}
+			return result;
+		}
+		function hasClass(obj,cls){
+			return obj.className.match(new RegExp("(\\s|^)"+cls+"(\\s|$)"));
+		}
+		function removeClass(obj,cls){
+			if(hasClass(obj,cls)){
+				var reg=new RegExp("(\\s|^)"+cls+"(\\s|$)");
+				obj.className=obj.className.replace(reg,"");
+			}
+		}
+		function addClass(obj,cls){
+			if(!hasClass(obj,cls)){
+				obj.className+=" "+cls;
+			}
+		}
+		
+		
+			window.onload=function(){
+				window.onscroll=function(){
+					var top=document.documentElement?document.documentElement.scrollTop:document.body.scrollTop;
+					var menus=document.getElementById("menu").getElementsByTagName("a");
+					//var items=document.getElementById("content").getElementsByClassName("item");
+					var items=getByClassName(document.getElementById("content"),"item");
+					var currentId="";//获取当前滚动条位置楼层的id
+					for (var i=0;i<items.length;i++) {
+						var _item=items[i];
+						var _itemTop=_item.offsetTop;
+						if(top>_itemTop-200){
+							currentId=_item.id;
+						}else{
+							break;//jquery用return false
+						}
+					}
+					if(currentId){
+						//给正确的menu的a元素class赋值
+						for (var j=0;j<menus.length;j++) {
+							var _menu=menu[j];
+							var _href=_menu.href.split("#");将字符串拆分
+							if(_href[_href.length-1]!=currentId){
+								removeClass(_menu,"current");
+							}else{
+								addClass(_menu,"current");
+							}
+							
+						}
+					}
+				}
+			}
 		</script>
 	</head>
 	<body>
