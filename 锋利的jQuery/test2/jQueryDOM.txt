@@ -1,0 +1,56 @@
+DOM文档对象模型
+DOM Core
+	任何一种支持DOM的程序设计语言都可以使用DOM Core。不仅可以处理网页，也可以用来处理任何一种使用标记语言编写出来的文档。
+	getElementById(),getElementsByTagName(),getAttribute(),setAttribute
+HTML_DOM
+	提供了一些更简明的记号来描述各种HTML元素的属性。只能用来处理web文档。
+	document.forms//获取表单对象
+	element.src//获取src属性
+CSS_DOM
+	针对CSS的操作。
+	element.style.color="red"
+jQuery DOM
+var $li=$("ul li:eq(1)");//查找元素节点
+var li_txt=$li.text();//获取文本内容
+var title=$("p").attr("title");//获取属性
+
+var $li=$("<li></li>");//创建元素节点
+$("ul").append($li);//插入节点
+var $li_2=$("<li>梨子</li>");//创建文本节点
+var $li_3=$("<li title="苹果">苹果</li>")//创建属性节点
+
+插入节点
+	append() appendTo()元素内部追加
+	prepend() prependTo()元素内部前置
+	after() insertAfter()元素后插入内容
+	before() insertBefore()元素前插入内容
+删除节点
+remove()
+	当用remove方法删除节点后，这个节点的后代节点将同时被删除。返回一个指向已删除的节点的引用，可以再次使用。
+	var $li=$("ul li:eq(1)").remove();
+	$li.appendTo("ul");
+	$("ul li").remove("li[title!=A]");//选择性删除title不等于A的li元素
+empty()
+	清空元素中的所有后代节点。
+复制节点
+clone()
+	$(this).clone().appendTo("ul");//复制当前节点，并添加到ul中，新节点不具备任何行为
+	$(this).clone(true).appendTo("ul");//参数true指，复制元素的同时复制其绑定的事件
+替换节点
+replaceWith()与replaceAll()将所有匹配的元素都替换成指定的元素
+	$("P").replaceWith("<strong>OK</strong>");
+	$("<strong>OK</strong>")replaceAll("p");
+包裹节点
+wrap()用某个节点用其他标记包裹起来。
+	$("strong").wrap("<b></b>");//→<b><strong>OK</strong></b>
+wrapAll()将所有匹配元素用一个元素包裹
+	<b><strong>OK</strong><strong>OK</strong><strong>OK</strong></b>
+wrapInner()将每一个匹配的元素的子内容用元素包裹起来
+	<strong><b>OK</b></strong>
+	
+属性操作
+var $para=$("p");
+var p_txt=$para.attr("title");//获取节点属性
+$("p").attr("title","thistitle");//设置节点属性
+$("p").attr({"title":"thistitle","name":"text"});//设置多个属性
+$("P").removeAttr("title");//删除属性

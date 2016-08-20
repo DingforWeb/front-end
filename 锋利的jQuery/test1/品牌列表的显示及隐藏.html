@@ -1,0 +1,71 @@
+<!--功能：
+从第5条后开始隐藏后面的品牌
+当用户点击“显示全部品牌”时：
+显示隐藏的品牌，“显示全部品牌”按钮文本切换为“精简显示品牌”，高亮推荐品牌
+当用户点击“精简显示品牌”时：
+隐藏品牌，切换按钮文本，去掉高亮推荐-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>品牌列表</title>
+		<style>
+			.SubCategoryBox{width: 700px;margin: 0 auto;height: auto;border: 1px solid #aaa ;}
+			ul{list-style: none;}
+			ul li{margin:10px 0px 10px 110px;float: left;}
+			.showmore{clear: both;margin: 10px auto;width: 120px;border: 1px solid #aaa;text-align: center;}
+			.promoted{background-color: yellow;}
+		</style>
+	</head>
+	<body>
+		<div class="SubCategoryBox">
+			<ul>
+				<li><a href="#">佳能</a><i>1029</i></li>
+				<li><a href="#">尼康</a><i>1029</i></li>
+				<li><a href="#">柯达</a><i>1029</i></li>
+				<li><a href="#">松下</a><i>1029</i></li>
+				<li><a href="#">佳能</a><i>1029</i></li>
+				<li><a href="#">理光</a><i>1029</i></li>
+				<li><a href="#">佳能</a><i>1029</i></li>
+				<li><a href="#">佳能</a><i>1029</i></li>
+				<li><a href="#">佳能</a><i>1029</i></li>
+				<li><a href="#">佳能</a><i>1029</i></li>
+				<li><a href="#">佳能</a><i>1029</i></li>
+				<li><a href="#">佳能</a><i>1029</i></li>
+				<li><a href="#">佳能</a><i>1029</i></li>
+				<li><a href="#">佳能</a><i>1029</i></li>
+				<li><a href="#">佳能</a><i>1029</i></li>
+				<li><a href="#">佳能</a><i>1029</i></li>
+				<li><a href="#">佳能</a><i>1029</i></li>
+				<li><a href="#">其他品牌相机</a><i>8970</i></li>
+			</ul>
+			<div class="showmore">
+				<a href="more.html"><span>显示全部品牌</span></a>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/jquery-3.1.0.min.js" ></script>
+		<script>
+			$(function(){
+				//隐藏品牌
+				var $category=$('ul li:gt(4):not(:last)');
+				$category.hide();
+				//点击“显示全部品牌”按钮
+				var $toggleBtn=$('div.showmore>a');
+				$toggleBtn.click(function(){
+					if($category.is(":visible")){
+						$category.hide();
+						$(".showmore a span").text("显示全部品牌");
+						$('ul li').removeClass("promoted");
+					}else{
+						$category.show();
+						$('.showmore a span').text("精简显示品牌");
+						$('ul li').filter(":contains('柯达'),:contains('理光')").addClass("promoted");
+						
+					}
+					return false;
+				});
+			})
+			
+		</script>
+	</body>
+</html>
