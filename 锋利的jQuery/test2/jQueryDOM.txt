@@ -54,3 +54,30 @@ var p_txt=$para.attr("title");//获取节点属性
 $("p").attr("title","thistitle");//设置节点属性
 $("p").attr({"title":"thistitle","name":"text"});//设置多个属性
 $("P").removeAttr("title");//删除属性
+
+样式操作
+$("P").attr("class");//获取class
+$("p").attr("class","high");//设置class，实际上是替换
+$("p").addClass("another");//追加“another”类
+如果一个元素有两个class值，则合并样式，若两个样式设定了同一样式属性，则后者覆盖前者
+$("p").removeClass("high");//移除样式
+$("p").removeClass("high").removeClass("another"); $("p").removeClass("high another");//移除多个class
+$("p").removeClass()//移除所有class
+$("p").toggleClass("another");//重复切换类名another，是在原有的class上追加而不是替换
+$("P").hasClass("another");//判断是否含有此class，返回boolean，等于$("P").is(".another");
+
+设置获取HTML、文本和值
+html()读取或设置某个元素中HTML内容，只对HTML和XHTML文档有效，不能用于XML文档
+	$("P").html();//获取p元素的html代码
+	$("P").html("<strong>OK</strong>");//设置html代码
+text()方法，读取或设置某个元素中的文本内容。对HTML文档和XML文档都有效
+	$("p").text();//读取文本内容
+	$("P").text("OK");//设置文本内容
+val()方法，用来设置和获取元素的值
+	$("input :eq(1)").val();
+	defaultValue属性包含该表单元素的初始值。
+	$("selector").val("选择2号"); $("#multiple").val(["选择1号","选择3号"]);
+	$(":checkbox").val(["check2","check3"]); $(":radio").val(["radio1"])
+	
+	//val使下拉列表、多选框、单选框表示选中。
+

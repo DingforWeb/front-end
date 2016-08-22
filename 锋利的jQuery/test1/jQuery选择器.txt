@@ -92,7 +92,12 @@ filter(selector)筛选出与指定表达式匹配的元素集合，可有多个�
 addClass(class)添加class
 removeClass(class)去掉class
 selector.is(":visible")判断是否可见
-toggle()
+toggle()切换
+$("").toggle(function(){
+	//代码块1
+	},function(){
+	//代码块2
+});
 
 
 

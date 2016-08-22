@@ -1,0 +1,46 @@
+<!--超链接提示
+目的：浏览器自带提示效果响应速度太慢，要让鼠标移动到超链接上时的瞬间就出现提示
+思路：
+当鼠标滑入超链接：
+	创建div元素，内容为title
+	将超链接title设为空
+	将div追加到文档
+	为它设置x、y坐标
+当鼠标滑出超链接：
+	移除div元素，恢复超链接title-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>超链接提示效果</title>
+		<script type="text/javascript" src="js/jquery-3.1.0.min.js" ></script>
+	</head>
+	<body>
+		<p><a href="#" class="tooltip" title="超链接提示1">提示</a></p>
+		<p><a href="#" class="tooltip" title="超链接提示2">提示</a></p>
+		<p><a href="#" title="自带提示1">自带提示1</a></p>
+		<p><a href="#" title="自带提示2">自带提示2</a></p>
+		<script type="text/javascript">
+			$(function(){
+				$("a.tooltip").mouseover(function(e){
+					this.myTitle=this.title;
+					this.title="";
+					//显示title
+					var tooltip="<div id='tooltip'>"+this.myTitle+"</div>";//创建div元素
+					$("body").append(tooltip);//追加到文档
+					$("#tooltip").css({"position":"absolute",
+						"top":(e.pageY+20)+"px","left":(e.pageX+10)+"px"
+					}).show("fast");//显示出来
+				}).mouseout(function(){
+					this.title=this.myTitle;
+					//隐藏title
+					$("#tooltip").remove();
+				}).mousemove(function(e){
+					$("#tooltip").css({"position":"absolute",
+						"top":(e.pageY+20)+"px","left":(e.pageX+10)+"px"
+					});
+				});
+			});
+		</script>
+	</body>
+</html>
