@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>多重动画</title>
+		<style>
+			#panel{position: relative;width: 100px;height: 100px;border: 1px solid #aaa;background-color: yellow;cursor: pointer;}
+		</style>
+		<script src="js/jquery-3.1.0.min.js"></script>
+	</head>
+	<body>
+		<div id="panel"></div>
+		<script>
+			$(function(){
+				$("#panel").click(function(){
+//					$(this).animate({left:"500px"},3000);//向右移动500px
+//					$(this).animate({left:"+=500px"},3000);//当前位置累加500px
+//					$(this).animate({left:"500px",height:"200px"},3000);//多重动画
+//					$(this).animate({left:"500px"},3000).animate({height:"200px"},3000);//顺序执行多个动画
+//					$(this).animate({left:"400px",height:"200px",opacity:"0.5"},3000).fadeOut("slow");//综合动画
+					$(this).animate({left:"500px"},3000,function(){
+						$(this).css("border","2px solid red");
+					});//回调函数
+					
+				});
+				$("#panel").hover(function(){
+					$(this).stop(true)//停止所有动画
+						.animate({height:"200px"},200).animate({width:"200px"},200);
+				},function(){
+					$(this).stop(false,true)//跳转到末动画
+						.animate({height:"100px"},200).animate({width:"100px"},200);
+				});
+			});
+		</script>
+	</body>
+</html>
