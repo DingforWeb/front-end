@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>test</title>
+	</head>
+	<body>
+		<div class="a">red</div>
+		<div style="color: blue;">blue</div>
+		<div style="color: green;">green</div>
+		<div style="color: yellow;">yellow</div>
+		<script src="js/jquery-3.1.0.min.js"></script>
+		<script>
+		
+		;(function($) {
+		$.fn.extend({
+			"color":function(value){
+				if (value==undefined) {
+					return this.css("color");
+				} else {
+					return this.css("color",value);
+				}
+			}
+		});
+	})(jQuery);
+			alert($("div").color+"\n此插件可用");
+			alert($("div").color("red"));
+		</script>
+	</body>
+</html>

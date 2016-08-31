@@ -1,0 +1,5 @@
+Ajax Asynchronous JavaScript and XML异步JacaScript和XML，利用一系列交互式网页应用相关的技术所形成的结合体。
+优势：
+不需要插件支持、优秀的用户体验、提高Web程序的性能、减轻服务器和带宽的负担
+不足：
+浏览器对XMLHttpRequest对象的支持度不足、破坏浏览器前进、后退按钮的正常功能、对搜索引擎的支持不足、开发和调试工具的缺乏

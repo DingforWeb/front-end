@@ -1,0 +1,14 @@
+$(selector).focus()获取焦点
+$(selector).height().width()获取高度、宽度
+scrollTop
+$(selector).attr('checked',true/false);复选框选中与取消选中
+val()属性值
+$(selector).dbclick()绑定双击事件
+$(selector).keyup()在用户每次松开按键时触发
+$(selector).trigger()模拟操作
+$(selector).triggerHandler()只触发为元素绑定的事件，而不会触发浏览器自带的事件
+$(selector).find("").end()返回selector，而不是继续find
+$(selector)[hasSelected?"removeClass":"addClass"]('selected');
+	代表了$(selector)["removeClass"]('selected')等价于$(selector).removeClass('selected');
+parseFloat(element,10);将值转换为float，以10进制。
+element.slice(-2);返回字符串中从指定字符开始的一个字符串。
