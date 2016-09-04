@@ -1,0 +1,290 @@
+body{
+	margin: 0;
+	padding: 0;
+	background: #1A1A19;
+	font-family: arial,helvetica,sans-serif;
+	font-size: 12px;
+	color: #979797;
+}
+h1,h2,h3{
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+	color: #000;
+}
+h1, h2, h3 {
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+	color: #000000;
+}
+
+h1 {
+	font-size: 2em;
+}
+
+h2 {
+	font-size: 2.4em;
+}
+
+h3 {
+	font-size: 1.6em;
+}
+p, ul, ol {
+	margin-top: 0;
+	line-height: 180%;
+}
+
+ul, ol {
+}
+
+a {
+	text-decoration: none;
+	color: #BA0202;
+}
+
+a:hover {
+}
+/*基本配置 结束*/
+#wrapper{
+	width: 980px;
+	margin: 0 auto;
+	padding: 0;
+}
+/*menu*/
+#menu{
+	width: 980px;
+	height: 60px;
+	margin: 0 auto;
+	padding: 0;
+	background: #000000;
+}
+#menu ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	line-height: normal;
+}
+#menu li{
+	float: left;
+	border-right: 1px solid #1A1A18;
+}
+#menu a{
+	display: block;
+	height: 30px;
+	padding: 30px 40px 0 40px;
+	text-decoration: none;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: arial,helvetica;
+	font-size: 12px;
+	font-weight: bold;
+	color: #f00820;
+	border: none;
+}
+#menu a:hover,#menu .current_page_item a{
+	background: url(../img/img02.jpg) repeat-x left top;
+	text-decoration: none;
+	color: #fff;
+}
+/*header*/
+#header{
+	clear: both;
+	width: 980px;
+	height: 370px;
+	margin: 30px auto 0 auto;
+	padding: 0;
+	background: url(../img/img01.jpg) no-repeat left top;
+}
+/*logo*/
+#logo{
+	margin: 0;
+	padding: 0 0 0 60px;
+	color: #000;
+}
+
+#logo h1{
+	padding-top: 160px;
+	font-size: 3.8em;
+	text-transform: lowercase;
+	letter-spacing: -1px;
+}
+#logo p{
+	margin: 0;
+	padding: 0 0 0 10px;
+	font: normal 14px georgia;
+	font-style: italic;
+	color: #FFFFFF;
+}
+#logo a{
+	border: none;
+	background: none;
+	text-decoration: none;
+	color: #fff;
+}
+/*page*/
+#page{
+	width: 940px;
+	margin: 0 auto;
+	padding: 0;
+}
+#page-bgtop{
+	padding: 20px 0px;
+}
+/*content*/
+#content{
+	float: right;
+	width: 580px;
+	padding: 30px 0 0 0;
+}
+.post{
+	margin-bottom: 15px;
+}
+.post .title{
+	height: 38px;
+	margin-bottom: 10px;
+	padding: 12px 0 0 0;
+	letter-spacing: -.5px;
+	color: #82050b;
+}
+.post .title a{
+	color: #ddd;
+	border: none;
+}
+.post .meta{
+	margin-bottom: 30px;
+	padding: 5px 0 15px 0px;
+	text-align: left;
+	font-family: arial;
+	font-size: 13px;
+	font-weight: bold;
+}
+.post .meta .date{
+	float: left;
+}
+.post .meta .posted{
+	float: right;
+}
+.post .entry{
+	padding: 0 0 20px 0;
+	padding-bottom: 20px;
+	text-align: justify;
+}
+.links{
+	height: 30px;
+	background: url(../img/img05.jpg) no-repeat left 20px;
+	padding: 30px 0 0 30px;
+	font-size: 12px;
+	font-weight: bold;
+	color: #1c1c1c;
+}
+/*sidebar*/
+#sidebar{
+	float: left;
+	width: 340px;
+	color: #787878;
+	margin: 0;
+	padding: 0;
+}
+#sidebar ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#sidebar li{
+	margin: 0;
+	padding: 0;
+}
+#sidebar li ul{
+	margin: 0;
+	padding-bottom: 30px;
+}
+#sidebar li li{
+	border-bottom: 1px solid #1e1e1e;
+	background: #121212;
+	margin: 0 30px;
+	padding: 5px 0;
+	border-left: none;
+}
+#sidebar li li a{
+	padding-left: 30px;
+	background: url(../img/img03.jpg) no-repeat 15px 4px;
+}
+#sidebar li li span{
+	display: block;
+	margin-top: -20px;
+	padding: 0;
+	font-size: 11px;
+	font-style: italic;
+}
+#sidebar h2{
+	height: 38px;
+	padding-left: 30px;
+	letter-spacing: -.5px;
+	font-size: 1.8em;
+	color: #fff;
+}
+#sidebar p{
+	margin: 0;
+	padding: 0 30px 20px 30px;
+	text-align: justify;
+}
+#sidebar a{
+	border: none;
+	color: #878787;
+}
+#sidebar a:hover{
+	text-decoration: underline;
+	color: #fff;
+}
+/*search*/
+#search{
+	width: 320px;
+	height: 60px;
+	padding: 20px 0 0 0;
+	background: url(../img/img04.jpg) no-repeat 20px 28px;
+}
+#search form{
+	height: 41px;
+	margin: 0;
+	padding: 10px 0 0 20px;
+}
+#search-text{
+	width: 215px;
+	padding: 8px 5px 5px 5px;
+	border: none;
+	background: none;
+	text-decoration: none;
+	text-transform: lowercase;
+	font: normal 11px arial;
+	color: #fff;
+}
+#search-submit{
+	width: 62px;
+	height: 22px;
+	border: none;
+	background: none;
+	color: #000;
+	cursor: pointer;
+}
+/*footer*/
+#footer{
+	height: 50px;
+	margin: 0 auto;
+	padding: 0 0 15px 0;
+	background: #000000;
+	font-family: arial;
+}
+#footer p{
+	margin: 0;
+	padding-top: 20px;
+	line-height: normal;
+	font-size: 9px;
+	text-transform: uppercase;
+	text-align: center;
+	color: #a0a0a0;
+}
+#footer a{
+	color: #8a8a8a;
+}
+
