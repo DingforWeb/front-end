@@ -1,0 +1,101 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	vertical-align: baseline;
+}
+div{
+	position: relative;
+	z-index: 2;
+}
+body{
+	background-color: #333;
+	color: #333;
+	font-family: "仿宋",sans-serif;
+	font-weight: 400;
+}
+.footer{
+	width: 450px;
+	text-align: center;
+	display: block;
+	margin: 15px auto 30px auto;
+	font-size: 2em;
+	color: #fff;	
+}
+.footer a{
+	font-weight: 500;
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.quote-box{
+	 border-radius: 3px;
+	 margin: 8% auto auto auto;
+	 width: 450px;
+	 padding: 40px 50px;
+	 display: block;
+	 background-color: #FFFFFF;
+}
+.quote-text{
+	text-align: center;
+	width: 100%;
+	height: auto;
+	clear: both;
+	font-weight: 500;
+	font-size: 1.75em;
+}
+.quote-text i{
+	font-size: 1em;
+	margin-right: 0.4em;
+}
+.quote-author{
+	widows: 450px;
+	height: auto;
+	clear: both;
+	padding-top: 20px;
+	font-size: 1em;
+	text-align: right;
+}
+.buttons{
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	display: block;
+	clear: both;
+	padding: 30px 0;
+}
+.button{
+	height: 38px;
+	width: auto;
+	border: none;
+	border-radius: 3px;
+	padding: 8px 18px;
+	color: #FFFFFF;
+	background-color: #333333;
+	outline: none;
+	font-size: 1em;
+	opacity: 1;
+}
+.button:hover{
+	opacity: 0.9;
+}
+.button i:hover{
+	text-decoration: none;
+}
+
+#wechat-quote,#weibo-quote{
+	float: left;
+	padding: 0px;
+	padding-top: 5px;
+	margin: 8px 5px 0px 0px;
+	text-align: center;
+	font-size: 1.2em;
+	height: 30px;
+	width: 40px;
+	cursor: pointer;
+}
+
+
+#new-quote{
+	float: right;
+}
+
