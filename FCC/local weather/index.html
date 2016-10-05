@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<script src="js/jquery-3.1.0.min.js"></script>
+		<link rel="stylesheet" href="css/weather.css" />
+		<script type="text/javascript" src="js/weather.js" ></script>
+		<script type="text/javascript" src="http://counter.sina.com.cn/ip/" charset="gb2312"></script>
+		<script src="http://www.bitstorm.org/jquery/color-animation/jquery.animate-colors-min.js"></script>
+		<title>local weather</title>
+	</head>
+	<body >
+		<div class="weather_box">
+			<div class="search_box">
+				<form >
+					<input class="searchbar" id="search" type="text" placeholder="enter city" />
+					<input class="button" id="button" type="submit" value="Search"/>
+				</form>
+			</div>
+			
+			<div class="location" >
+				<h2 class="city" id="city"></h2>
+			</div>
+			<div class="group">
+				<div class="group_left">
+					<img id="icon" alt="weather_icon" /><!--图标-->
+					<div class="temp">
+						<h2 id="num" class="num"></h2><!--温度-->
+						<p class="description" id="des"></p><!--描述-->
+					</div>
+				</div>
+				<div class="group_right">
+					<ul class="weather_data">
+						<li id="weather_range"></li>
+						<li id="wind"></li>
+						<li id="time"></li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="forecast" id="forecast">
+				
+			</div>
+		</div>
+		
+	</body>
+</html>

@@ -1,0 +1,133 @@
+*{
+	padding: 0;
+	margin: 0;
+	font: 14px "微软雅黑";
+}
+ul{
+	list-style: none;
+}
+
+body{
+}
+
+.weather_box{
+	width: 480px;
+	margin: 50px auto;
+
+}
+
+.searchbar,.button{
+	display: block;
+	height: 45px;
+	letter-spacing: 0.025em;
+	color: #e8e8e8;
+	border: none;
+	font-family: "微软雅黑" ;
+	font-size: 2em;
+	font-weight: 200;
+}
+
+.search_box{
+	height: 45px;
+}
+.searchbar{
+	float: left;
+	width: 380px;
+	border-bottom: solid thin #e8e8e8;
+}
+
+.button{
+	float: right;
+	width: 100px;
+}
+.button:hover{
+	opacity: 0.5;
+}
+
+.location{
+	clear: both;
+	margin-top: 10px;
+}
+
+.city,.fore{
+	margin-top: 10px;
+	font-size: 2em;
+	color: #fff;
+	letter-spacing: 0.5em;
+	font-weight: 200;
+	border-bottom: solid thin #e8e8e8;
+	height: 37px;
+}
+
+.group{
+	widows: 480px;
+	height: 80px;
+	border-bottom: solid thin #e8e8e8;
+	margin: 10px 0;
+	padding-bottom: 20px;
+}
+.group_left{
+	width: 200px;
+	height: 80px;
+	float: left;
+	font-size:2em;
+	color: #e8e8e8;
+	
+}
+
+#icon{
+	float: left;
+	margin-right: 20px;
+}
+
+.temp{
+	float: left;
+}
+
+.num{
+	font-size: 3em;
+	color: #e8e8e8;
+	font-weight: 100;
+	line-height: 60px;
+	text-align: center;
+}
+
+.description{
+	font-size: 0.7em;
+	color: #e8e8e8;
+	line-height: 20px;
+	text-align: center;
+	text-indent: -1em;
+}
+.group_right{
+	width: 280px;
+	height: 80px;
+	float: right;
+}
+
+.weather_data{
+	width: 250px;
+	color: #e8e8e8;
+	height: 80px;
+	text-align: left;
+	margin-right: 30px;
+}
+
+.weather_data li{
+	text-align: right;
+	line-height: 20px;
+	height: 20px;
+	font-family: "微软雅黑";
+	font-size: 1.3em;
+	margin: 3px 0;
+}
+
+.feature{
+	margin-top: 10px;
+	float: left;
+	width: 140px;
+	padding: 10px;
+	text-align: center;
+	color: #e8e8e8;
+	
+}
