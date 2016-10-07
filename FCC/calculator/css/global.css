@@ -1,0 +1,94 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+}
+
+body{
+	background-color: #6600CC;
+}
+
+.cal_box{
+	margin: 50px auto;
+	width: 480px;
+	background-color: #CC33FF;
+	border-radius: 15px;
+}
+
+.logo{
+	width: 100%;
+	height: 50px;
+}
+
+.logo h2{
+	text-align: center;
+	font-size: 26px;
+	line-height: 50px;
+	font-weight: 300;
+	color: #fff;
+	font-family: georgia;
+}
+
+.caling_box{
+	width: 480px;
+	height: 45px;
+}
+
+#caling{
+	border: none;
+	width: 450px;
+	height: 45px;
+	padding-right: 30px;
+	padding-top: 5px;
+	text-align: right;
+	color: #8e8e8e;
+	font-weight: 200;
+	font-size: 40px;
+	background-color: #fff;
+}
+
+.result_box{
+	height: 30px;
+	font-size: 20px;
+	text-align: right;
+	padding-right: 30px;
+	padding-top: 10px;
+	color: #e8e8e8;
+}
+
+.cal_keys{
+	width: 480px;
+	height: 374px;
+	padding-bottom: 4px;
+}
+
+.key{
+	border: none;
+	width: 115px;
+	height: 70px;
+	margin-left: 4px;
+	margin-top: 4px;
+	float: left;
+	background: #fff;
+	line-height: 70px;
+	font-size: 3em;
+	font-weight: 400;
+	text-align: center;
+}
+
+.key:hover{
+	background-color: #CC99CC;
+	color: #E8E8E8;
+}
+.cal_keys2_left{
+	float: left;
+	width: 357px;
+}
+.cal_keys2_right{
+	float: left;
+}
+.equal{
+	width: 115px;
+	height: 144px;
+	line-height: 144px;
+}

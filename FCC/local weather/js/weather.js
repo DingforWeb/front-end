@@ -87,9 +87,9 @@ $(function(){
 				if(data.errMsg==="success"){
 					var result=data.retData;
 					$city.html(result.city);
-					$num.html(result.today.curTemp+"&deg;");
+					$num.html(result.today.curTemp);
 					$description.html(result.today.type);
-					$wr.html(result.today.lowtemp+"&deg;  ~  "+result.today.hightemp+"&deg;");
+					$wr.html(result.today.lowtemp+"  ~  "+result.today.hightemp);
 					$wind.html(result.today.fengxiang+" "+result.today.fengli);
 					$time.html("更新时间 "+result.today.date);
 					$icon.attr("src",setImg(result.today.type));
