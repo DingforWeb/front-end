@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>my page</title>
+		<link href="//netdna.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+                        
+		<link rel="stylesheet" href="css/global.css" />
+			
+		<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+		
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+		
+		<!-- 新 Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+		
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<!--nav-->
+		<nav id="nav" class="navbar navbar-fixed-top navbar-default"></nav>
+		<!--personal-info-->
+		<div class="personal-info">
+			<div class="container text-center">
+				<!--personal information part 1-->
+				<div class="col-md-4 p1">
+					<img src="img/1.jpg" alt="me" />
+					<h1>Ding YuanJie</h1>
+					<h2>front end developer</h2>
+				</div>
+				<div class="col-md-4 p2">
+					<h3>Contact</h3>
+					<h4><a href="mailto:dingyuanj@sina.com">dingyuanj@sina.com</a></h4>
+					<h4 class="phone">18202413730</h4>
+					<h4>辽宁省沈阳市东北大学浑南校区</h4>
+				</div>
+				<div class="col-md-4 p3">
+					<h3>Follow</h3>
+					<a href="#"><i class="fa fa-github"></i></a>
+					<a href="#"><i class="fa fa-codepen"></i></a>
+					<a href="#"><i class="fa fa-wechat"></i></a>
+				</div>
+			</div>
+		</div>
+		<!--about-->
+		<div class="about">
+			<div class="container">
+				<h3>About me</h3>
+				<div class="hr"></div>
+				<img src="img/1.jpg" alt="me" />
+				<p>learn me form my skills</p>
+			</div>
+		</div>
+		
+		<!-- skills -->
+		<div class="skills">
+			<div class="container">
+				<h3>my skills</h3>
+				<div class="hr"></div>
+				<div class="col-md-6 skills-left">
+					<h4>此处为自我介绍</h4>
+					<p>此处为自我介绍</p>
+				</div>
+				<div class="col-md-6 skills-right">
+					<div class="bar_group">
+						<div class='bar_group__bar thin' label='HTML' show_values='true' tooltip='true' value='350'></div>
+						<div class='bar_group__bar thin' label='Java Script' show_values='true' tooltip='true' value='222'></div>
+						<div class='bar_group__bar thin' label='PHP' show_values='true' tooltip='true' value='475'></div>
+						<div class='bar_group__bar thin' label='Designing' show_values='true' tooltip='true' value='286'></div>
+					</div>
+					<script src="js/bars.js"></script>
+				</div>
+			</div>
+		</div>
+		<!--portfolio-->
+		<div class="portfolio" id="portfolio">
+			<div class="container">
+				<h3>My Portfolio</h3>
+				<div class="hr"></div>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="effect1 wow fadeInUp animated">
+							<a href="img/g1.jpg" class="swipebox" title="a">
+								<img src="img/g1.jpg" alt="" class="img-responsive" />
+								<div class="figcaption">
+									<p>local weather</p>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="effect1 wow fadeInUp animated">
+							<a href="img/g1.jpg" class="swipebox" title="a">
+								<img src="img/g1.jpg" alt="" class="img-responsive" />
+								<div class="figcaption">
+									<p>local weather</p>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="effect1 wow fadeInUp animated">
+							<a href="img/g1.jpg" class="swipebox" title="a">
+								<img src="img/g1.jpg" alt="" class="img-responsive" />
+								<div class="figcaption">
+									<p>local weather</p>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--contact-->
+		<div class="contact">
+			<div class="container">
+				<h3>Contact</h3>
+				<div class="hr"></div>
+				<div class="col-md-4 contact-content">
+					<i class="fa fa-map-marker" aria-hidden="true"></i>
+					<h4>沈阳东北大学</h4>
+					<h4>辽宁省</h4>
+				</div>
+				<div class="col-md-4 contact-content">
+					<i class="fa fa-envelope" aria-hidden="true"></i>
+					<h4><a href="mailto:dingyuanj@sina.com">dingyuanj@sina.com</a></h4>
+					<
+				</div>
+				<div class="col-md-4 contact-content">
+					<i class="fa fa-phone" aria-hidden="true"></i>
+					<h4>18202413730</h4>
+					<h4>辽宁省</h4>
+				</div>
+				<form action="#" method="post">
+					<input type="text" name="name" class="name" placeholder="Your Name" />
+					<input type="text" name="email" class="email" placeholder="Your Email" />
+					<textarea name="your messafe" placeholder="Your Message"></textarea>
+					<input type="submit" value="send message" />
+				</form>
+			</div>
+		</div>
+		
+		<!--footer-->
+		<div class="footer">
+			<p>$copy;2016 Dingding</p>
+		</div>
+		
+		
+	</body>
+</html>

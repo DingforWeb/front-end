@@ -4,9 +4,9 @@ $(function(){
 	var apikey="a0d581c91a3f73c0d36d6b143e321802";
 	
 	//获得当地地址
-	$.getScript('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js',function(){
-	   getWeather(remote_ip_info.city);
-	});
+	//$.getScript('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js',function(){
+	   getWeather("沈阳");
+	//});
 	
 	var $city=$("#city"),
 		$num=$("#num"),
@@ -97,7 +97,7 @@ $(function(){
 					var forecast=data.retData.forecast;
 					console.log(forecast[1].date);
 					var str='<h2 class="fore">天气预报</h2>';
-					for(var i=0;i<3;i++){
+					for(var i=1;i<4;i++){
 						str+='<div class="feature"><p>'+forecast[i].date+
 							'</p><img src="'+setImg(forecast[i].type)+'" /><p>'+
 							forecast[i].lowtemp+"&deg;~"+forecast[i].hightemp+
@@ -109,6 +109,7 @@ $(function(){
 					$city.html("查询出错");
 					$(".group").display="none";
 					$(".forecast").display="none";
+					setBackground();
 				}
 			});
 		}

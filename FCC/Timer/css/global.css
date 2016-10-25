@@ -1,0 +1,86 @@
+*{
+	margin: 0;
+	padding: 0;
+	
+}
+
+body{
+	color: #fff;
+	font-size: 16px;
+	background-color: cornflowerblue;
+}
+
+header{
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	font-size: 40px;
+	font-weight: 400;
+	font-family: arial;
+	margin-bottom: 50px;
+	
+}
+
+.setting{
+	width: 500px;
+	margin: 0 auto;
+	border-top: 1px dotted #fff;
+	clear: both;
+	padding-top: 20px;
+	height: 80px;
+	border-bottom: 1px dotted #fff;
+}
+
+.set{
+	float: left;
+	width: 250px;
+	text-align: center;
+}
+
+.set>span{
+	display: block;
+}
+
+.set div{
+	width: 250px;
+	height: 38px;
+}
+
+.btn{
+	width: 50px;
+	height: 38px;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+}
+
+.btn:hover{
+	opacity: 0.5;
+}
+
+button+span{
+	width: 50px;
+	line-height: 38px;
+}
+
+.clock{
+	width: 500px;
+	margin: 0 auto;
+	padding-top: 20px;
+	text-align: center;
+}
+
+.timer{
+	width: 200px;
+	height: 200px;
+	border-radius: 100px;
+	border: 2px solid green;
+	cursor: pointer;
+}
+
+.timer span{
+	font-size: 30px;
+	font-weight: 400;
+}
+
+
