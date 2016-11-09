@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>弹幕</title>
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+		<!-- 新 Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+		<style>
+			.main{width: 980px; margin: 0 auto; background-color: greenyellow;}
+			.head{margin-top: 50px; text-align: center;}
+			h2{font-size: 35px;line-height: 70px;color: #FFFFFF;}
+			.danmu-show{margin: 20px 50px; height: 310px; border: 2px dotted #fff;background-color: #fff;position: relative;overflow: hidden;}
+			.danmu-button{text-align: center;}
+			#send,#reset{ background: rgba(0,0,0,0.48);color: #fff;border: none;margin: 15px 7px;
+				border-radius: 10px;padding: 7px 25px;font-size: 18px;}
+			#send:hover,#reset:hover{background: rgba(0,0,0,0.3);}
+			#danmu-text{background:rgba(0,0,0,0.3);display:block;margin: 10px auto;width: 80%; border: 1px dotted #000; 
+				border-radius: 5px; font-size: 16px; padding: 5px;outline: none;}
+			#danmu-text:focus{background: rgba(255,255,255,0.8);}
+			.dm-item{display: inline-block;font-size: 1.5em;position: absolute;}
+		</style>
+		<script src="https://cdn.wilddog.com/sdk/js/2.1.2/wilddog.js"></script>
+		<script type="text/javascript" src="js/danmu.js" ></script>
+	</head>
+	<body>
+		<div class="main">
+			<div class="head">
+				<h2>弹幕池</h2>
+			</div>
+			<div class="danmu-show">
+				<!--<div class="dm-item">danmu</div>-->
+			</div>
+			<div class="danmu-button">
+				<input type="text" name="danmu-text" id="danmu-text" value="" placeholder="请输入弹幕" />
+				<button id="send">发射</button>
+				<button id="reset">清除</button>
+			</div>
+		</div>
+	</body>
+</html>
