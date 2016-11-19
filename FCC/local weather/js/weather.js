@@ -160,13 +160,13 @@ $(function(){
 	      	}, 1000);
 		}else if(str.indexOf("云")!=-1){
 			$body.animate({
-				"background-color": "#B4EEB4",
+				"background-color": "#33CCCC",
 		      }, 1000);
 			$search.animate({
-				"background-color": "#B4EEB4",
+				"background-color": "#33CCCC",
 		      }, 1000);
 		    $button.animate({
-				"background-color": "#B4EEB4",
+				"background-color": "#33CCCC",
 	      	}, 1000);
 		}else if(str.indexOf("风")!=-1){
 			$body.animate({

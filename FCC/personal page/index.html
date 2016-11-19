@@ -31,6 +31,8 @@
 		tpwidget("show");</script>
 		<!--心知天气-->
 		<script type="text/javascript" src="js/scroll.js" ></script>
+		<script src="https://cdn.wilddog.com/sdk/js/2.2.0/wilddog.js"></script>
+		<script src="js/comment.js"></script>
 	</head>
 	<body>
 		<!--navigation-->
@@ -61,7 +63,11 @@
 						<li>
 							<a href="#contact">Contact</a>
 						</li>
+						<li>
+							<a href="#comment">Comment</a>
+						</li>
 					</ul>
+					
 				</div>
 			</div>
 			
@@ -71,26 +77,26 @@
 		<!--home-->
 		<a name="home" class="sr-only"></a>
 		<div class="home  menu" id="home">
-				<div class="container">
+				<div class="container-fluid">
 					<h3>Home</h3>
 					<div class="hr"></div>
 					<div class="row">
-						<div class="col-md-4 h-part1">
+						<div class="col-md-4 col-sm-4 h-part1">
 							<img src="img/IMG_3479.JPG" alt="my picture" />
 							<h1>丁媛洁</h1>
 							<h2>前端开发</h2>
 						</div>
-						<div class="col-md-4 h-part2">
+						<div class="col-md-4 col-sm-4 h-part2">
 							<h3>联系方式</h3>
 							<h4><a href="mailto:dingyuanj@sina.com">dingyuanj@sina.com</a></h4>
 							<h4>18202413730</h4>
 							<h4>东北大学 软件学院</h4>
 						</div>
-						<div class="col-md-4 h-part3">
+						<div class="col-md-4 col-sm-4 h-part3">
 							<h3>关注我</h3>
-							<a href="#"><i class="fa fa-github"></i></a>
-							<a href="#"><i class="fa fa-wechat"></i></a>
-							<a href="#"><i class="fa fa-codepen"></i></a>			
+							<a href="https://github.com/DingforWeb"><i class="fa fa-github"></i></a>
+							<a href="img/wechat.png" id="wechatImg"><i class="fa fa-wechat"></i></a>
+							<a href="https://codepen.io/DingYJ/pens/public/#"><i class="fa fa-codepen"></i></a>			
 						</div>
 					</div>
 				</div><!--container-->
@@ -105,8 +111,13 @@
 					<div class="hr"></div>
 					<div class="row">
 						<div class="col-md-5 col-sm-6">
-							<h4>这里是自我介绍</h4>
-							<p>这里是自我介绍</p>
+							<!--<h4>关于我</h4>
+							<p>坚信：努力才有收获</p>
+							<p>如果不去尝试，永远不会前进</p>
+							<p>让优秀，成为一种习惯。</p>-->
+							<p id="randomWord"></p>
+							<p id="author">-<span></span></p>
+							<button class="btn btn-primary" id="changeWord">change</button>
 						</div>
 						<div class="col-md-7 col-sm-6">
 							<div class="bar_group">
@@ -124,36 +135,36 @@
 		<!--portfolio-->
 		<a name="portfolio" class="sr-only"></a>
 		<div class="portfolio  menu" id="portfolio">
-				<div class="container">
+				<div class="container-fluid">
 					<h3>My Portfolio</h3>
 					<div class="hr"></div>
 					<div class="show-portfolio">
-						<div class="col-md-4">
+						<div class="col-md-4 col-sm-4">
 							<div class="portfolio-item">
 								<a href="#" class="portfolio-box" title="calculator">
-									<img src="img/g1.jpg" class="img-responsive" alt="calculator"/>
+									<img src="img/danmu.png" class="img-responsive" alt="弹幕墙"/>
 									<div class="description">
-										<p>calculator</p>
+										<p>弹幕墙</p>
 									</div>
 								</a>
 							</div>
 						</div>
-						<div class="col-md-4">
+						<div class="col-md-4 col-sm-4">
 							<div class="portfolio-item">
 								<a href="#" class="portfolio-box" title="calculator">
-									<img src="img/g1.jpg" class="img-responsive" alt="calculator"/>
+									<img src="img/localweather.png" class="img-responsive" alt="实时天气"/>
 									<div class="description">
-										<p>calculator</p>
+										<p>实时天气</p>
 									</div>
 								</a>
 							</div>
 						</div>
-						<div class="col-md-4">
+						<div class="col-md-4 col-sm-4">
 							<div class="portfolio-item">
 								<a href="#" class="portfolio-box" title="calculator">
-									<img src="img/g1.jpg" class="img-responsive" alt="calculator"/>
+									<img src="img/calculator.png"img-responsive" alt="计算器"/>
 									<div class="description">
-										<p>calculator</p>
+										<p>计算器</p>
 									</div>
 								</a>
 							</div>
@@ -166,17 +177,17 @@
 		<div class="contact  menu" id="contact">
 			<h3>Contact</h3>
 			<div class="hr"></div>
-			<div class="container">
+			<div class="container-fluid">
 				<div class="row">
-					<div class="col-md-4 con">
+					<div class="col-md-4 col-sm-4 con">
 						<i class="fa fa-map-marker"></i>
 						<h4>东北大学浑南校区</h4>
 					</div>
-					<div class="col-md-4 con">
+					<div class="col-md-4 col-sm-4 con">
 						<i class="fa fa-phone"></i>
 						<h4>18202413730</h4>
 					</div>
-					<div class="col-md-4 con">
+					<div class="col-md-4 col-sm-4 con">
 						<i class="fa fa-envelope"></i>
 						<h4>dingyuanj@sina.com</h4>
 					</div>
@@ -184,11 +195,40 @@
 						<input type="text" class="name" name="name" placeholder="name" />
 						<input type="text" class="email" name="email" placeholder="email" />
 						<textarea class="textarea" name="message" placeholder="message"></textarea>
-						<input type="submit" value="send message" class="btn btn-primary"/>
+						<input type="submit" value="send message" class="btn btn-primary" id="conSend"/>
 					</form>
 				</div>
 			</div>
 		</div>
+		
+		<a name="comment" class="sr-only"></a>
+		<div class="comment menu" id="comment">
+			<h3>Comment</h3>
+			<div class="hr"></div>
+			<div class="c-box" id="c-box">
+				 <!--评论区-->
+				<!--
+					<div class="c-item">
+					<span class="c-content">哦也也yeyeyyeyey</span>
+					<span class="c-writer">一个大西瓜<small>11.10</small></span>
+				</div>
+				-->
+			</div>
+			<nav id="pageNav">
+			  	<ul class="pager">
+			    	<li class="previous"><a href="#" id="c-prev" onclick="prevPage();return false;">上一页</a></li>
+			    	<li class="current"><a href="#" id="c-current"></a></li>
+			    	<li class="next"><a href="#" id="c-next" onclick="nextPage();return false;">下一页</a></li>
+			  	</ul>
+			</nav>
+			<div class="c-form">
+				<input type="text" class="c-text" id="c-text" placeholder="请输入评论"/>
+				<input type="text" class="c-name" id="c-name" placeholder="请输入昵称"/>
+				<input type="submit" value="发送" id="c-send" class="btn btn-primary"/>
+				<p id="c-info" class="warning"></p>
+			</div>
+		</div>
+		
 		
 		<!--footer-->
 		<footer class="footer">

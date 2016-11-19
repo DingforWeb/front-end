@@ -2,6 +2,8 @@ body {
 	padding: 0;
 	margin: 0;
 	background: #FFF;
+	font-size: 16px;
+	font-family: arial;
 	font-family: 'Merriweather Sans', sans-serif;
 }
 body a {
@@ -55,14 +57,20 @@ nav.navbar-default{
 	opacity: 0.85;
 	color: #fff;
 }
+
+/*wechat picture big*/
+#wechatImgBig img{
+	width: 15em;
+	height: 15em;
+}
 /*body*/
-.home,.about,.contact,.portfolio{
-	padding: 110px 0 75px 0 ;
+.home,.about,.contact,.portfolio,.comment{
+	padding: 6em 0 4.5em 0 ;
 }
 
-.home h3,.about h3,.contact h3,.portfolio h3{
+.home h3,.about h3,.contact h3,.portfolio h3,.comment h3{
 	color: #fff;
-	font-size: 30px;
+	font-size: 2em;
 	font-weight: 500;
 }
 
@@ -74,7 +82,7 @@ nav.navbar-default{
 }
 /*home*/
 .home{
-	background: url("http://img1.gamersky.com/image2016/10/20161029_ls_141_6/gamersky_02origin_03_2016102920249FE.jpg") no-repeat 0px 0px fixed;
+	background: url(../img/bg3.jpg) no-repeat 0px 0px fixed;
 	background-size: cover;
 	text-align: center;
 }
@@ -136,7 +144,7 @@ nav.navbar-default{
 
 /*about*/
 .about{
-	background: url("http://img1.gamersky.com/image2016/10/20161029_ls_141_6/gamersky_07origin_13_20161029202443D.jpg") no-repeat 0px 0px fixed;
+	background: url(../img/bg1.jpg) no-repeat 0px 0px fixed;
 	background-size: cover;
 	text-align: center;
 }
@@ -249,9 +257,23 @@ nav.navbar-default{
 	color: #e8e8e8;
 }
 
+#randomWord{
+	font-size: 2em;
+	font-weight: 600;
+}
+#author{
+	font-size: 1.5em;
+	margin-top: 1em;
+	color: #E4E4E4;
+}
+#changeWord{
+	padding: 0.7em 1.3em;
+}
+
+
 /*portfolio*/
 .portfolio{
-	background: url("http://img1.gamersky.com/image2016/10/20161029_ls_141_6/gamersky_05origin_09_201610292024DC5.jpg") no-repeat center center fixed;
+	background: url(../img/bg4.jpg) no-repeat center center fixed;
 	background-size: cover;
 	text-align: center;
 }
@@ -263,18 +285,21 @@ nav.navbar-default{
 .show-portfolio a{
 	display: block;
 }
-
 .show-portfolio a img.img-responsive{
 	width: 100%;
 }
 
 .portfolio-box{
-	background: #f58703;
+	background: #000;
 	overflow: hidden;
 	position: relative;
+	margin: 2em;
 }
 
 .portfolio-box img{
+	background-position: center;
+	width: 100%;
+	height: 20em;
 	transition: transform 0.5s ;
 	-webkit-transition: -webkit-transform 0.5s;
 	-moz-transition: -moz-transform 0.5s;
@@ -287,14 +312,14 @@ nav.navbar-default{
 	bottom: 0;
 	left: 0;
 	opacity: 0;
-	-webkit-transition: opacity 0.5s,-webkit-transform 0.35s;
-	-moz-transition: opacity 0.5s,-moz-transform 0.35s;
-	transition: opacity 0.5s,transform 0.35s;
+	-webkit-transition: opacity 0.7s,-webkit-transform 0.35s;
+	-moz-transition: opacity 0.7s,-moz-transform 0.35s;
+	transition: opacity 0.7s,transform 0.35s;
 	transform: translate3d(0,50px,0);
 	-moz-transform: translate3d(0,50px,0);
 	-o-transform: translate3d(0,50px,0);
 	-ms-transform: translate3d(0,50px,0);
-	padding: 13px 30px;
+	padding: 10px 30px;
 	font-size: 1.5em;
 	color: #FFFFFF;
 	letter-spacing: 1px;
@@ -321,7 +346,7 @@ nav.navbar-default{
 
 /*contact*/
 .contact{
-	background: url("http://img1.gamersky.com/image2016/10/20161029_ls_141_9/gamersky_02origin_03_201610292028407.jpg") no-repeat center center fixed;
+	background: url(../img/bg2.jpg) no-repeat center center fixed;
 	background-size: cover;
 	text-align: center;
 }
@@ -341,37 +366,125 @@ nav.navbar-default{
 	color: #fff;
 }
 
-form{
+.contact form{
 	width: 78%;
 	margin: 30px auto ;
 }
 
-input[type="text"]{
+.contact input[type="text"]{
 	width: 48%;
 	padding: 10px;
-	background: rgba(255,255,255,0.3);
+	background: rgba(255,255,255,0.7);
 	border: 1px dotted #000;
 }
 
-input.name{
+.contact input.name{
 	margin-right: 2%;
 }
 
 .contact textarea{
 	width: 98%;
-	background: rgba(255,255,255,0.3);
+	background: rgba(255,255,255,0.7);
 	height: 150px;
 	border: 1px dotted #000000;
 	padding: 10px;
-	margin: 20px 0px;
+	margin: 20px 0 30px 0;
 }
 
-/*input[type="submit"]{
-	background: blue;
-	padding: 8px 15px;
-	color: #FFFFFF;
-	border: 1px dotted #FFFFFF;
-}*/
+input[type="submit"]{
+	padding: 0.6em 1.3em;
+	font-size: 1.2em;
+}
+
+/*comment*/
+.comment{
+	background: url(../img/bg5.jpg) center center no-repeat fixed;
+	background-size: cover;
+	text-align: center;
+}
+
+.comment .c-box{
+	width: 60%;
+	margin: 0 auto;
+	padding: 30px 0;
+}
+
+.c-item{
+	height: 3em;
+	border: 2px solid #FFFFFF;
+	color: #000;
+	line-height: 3em;
+	font-size: 1.15em;
+	font-weight: 500;
+	letter-spacing: 0.125em;
+	margin-top: 20px;
+	border-radius: 5px;
+	background: rgba(255,255,255,0.8);
+	padding: 0 1em;
+}
+
+
+.c-content{
+	float: left;
+}
+
+.c-writer{
+	float: right;
+}
+.c-writer small{
+	font-size: 0.7em;
+	color: #999999;
+	font-style: italic;
+}
+
+.comment nav{
+	width: 45%;
+	margin: 0 auto;
+}
+.comment .c-form{
+	width: 60%;
+	margin: 10px auto;
+}
+
+.comment .c-form input{
+	vertical-align: middle;
+	margin-left: 7px;
+	font-size: 1.125em;
+}
+
+.comment input[type="text"]{
+	height: 3em;
+	padding: 0.5em;
+	background: rgba(255,255,255,0.8);
+	border: 1px dotted #000;
+}
+
+.comment input.c-text{
+	width: 65%;
+}
+
+.comment input.c-name{
+	width: 15%;
+}
+
+.comment input[type="submit"]{
+	padding: .5em 1.5em;
+}
+
+.comment #c-info{
+	color: red;
+	font-size: 1.3em;
+	font-weight: 500;
+	letter-spacing: 0.125em;
+	text-align: left;
+	padding-left: 2em;
+	padding-top: 0.7em;
+}
+
+
+
+
+
 /*footer*/
 .footer{
 	background: #fff;
